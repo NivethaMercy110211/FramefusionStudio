@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | FrameFusion Studio</title>
+    <link rel="icon" href="assets/images/framefusion-favicon.png?v=2" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=50">
+</head>
+
+<body>
+    <header class="site-header"><nav class="nav container"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><div class="desktop-nav"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm desktop-only active" href="login.html">Login</a><button class="icon-btn icon-btn-theme desktop-only" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button><button class="icon-btn icon-btn-dir" data-dir-toggle type="button" aria-label="Switch to right-to-left">RTL</button><button class="icon-btn hamburger" data-menu-open type="button" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav></header><div class="mobile-overlay" data-menu-close></div><aside class="mobile-panel"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><nav><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a class="active" href="login.html">Login</a></nav><div class="mobile-tools"><button class="icon-btn icon-btn-theme" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button></div></aside>
+    <main>
+
+        <!-- ── 1. CINEMATIC HERO ── -->
+        <section class="pricing-hero">
+            <div class="pricing-hero-bg"></div>
+            <div class="container">
+                <div class="pricing-hero-inner">
+                    <p class="eyebrow">Pricing</p>
+                    <h1>Flexible Editing Plans</h1>
+                    <p class="lead">Transparent, project-based pricing with no hidden fees. Every plan includes structured revisions, platform-optimized exports, and direct communication throughout the production process.</p>
+                    <div class="pricing-hero-pills">
+                        <div class="pricing-hero-pill"><span>★</span> No hidden fees</div>
+                        <div class="pricing-hero-pill"><span>★</span> Fast turnaround</div>
+                        <div class="pricing-hero-pill"><span>★</span> Structured revisions</div>
+                        <div class="pricing-hero-pill"><span>★</span> All formats included</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── 2. PRICING CARDS ── -->
+        <section class="section pricing-section">
+            <div class="container">
+
+                <!-- Billing toggle -->
+                <div class="pricing-toggle-bar">
+                    <span class="pricing-toggle-label active" id="labelMonthly">Per Project</span>
+                    <div class="pricing-toggle-switch" id="billingToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Toggle annual billing"></div>
+                    <span class="pricing-toggle-label" id="labelAnnual">Monthly Retainer</span>
+                    <span class="pricing-save-badge">Save 20%</span>
+                </div>
+
+                <div class="pricing-cards-grid">
+
+                    <!-- Basic -->
+                    <article class="pricing-card">
+                        <div class="pricing-card-header">
+                            <span class="pricing-tier-badge badge-basic">Basic</span>
+                            <h3>Short-Form Edit</h3>
+                            <p>Perfect for Reels, Shorts, and TikToks with clean cuts, captions, and fast delivery.</p>
+                            <div class="pricing-amount-block">
+                                <span class="pricing-amount" data-monthly="99" data-annual="79"><sup>$</sup>99</span>
+                                <span class="pricing-amount-period">/ project</span>
+                                <div class="pricing-annual-note" id="note-basic"></div>
+                            </div>
+                        </div>
+                        <div class="pricing-card-body">
+                            <ul class="pricing-feature-list">
+                                <li><span class="pf-icon">✓</span> Up to 60-second final edit</li>
+                                <li><span class="pf-icon">✓</span> 1 structured revision round</li>
+                                <li><span class="pf-icon">✓</span> Animated captions included</li>
+                                <li><span class="pf-icon">✓</span> Beat-sync music track</li>
+                                <li><span class="pf-icon">✓</span> 48-hour delivery</li>
+                                <li><span class="pf-icon">✓</span> Platform export (9:16 + 16:9)</li>
+                                <li class="pf-dim"><span class="pf-icon">–</span> Motion graphics</li>
+                                <li class="pf-dim"><span class="pf-icon">–</span> Color grading</li>
+                            </ul>
+                            <a class="btn btn-secondary" href="contact.html">Choose Basic</a>
+                        </div>
+                    </article>
+
+                    <!-- Standard (Featured) -->
+                    <article class="pricing-card card-featured">
+                        <span class="pricing-popular-tag">Most Popular</span>
+                        <div class="pricing-card-header">
+                            <span class="pricing-tier-badge badge-standard">Standard</span>
+                            <h3>Advanced Edit</h3>
+                            <p>Full-featured YouTube and social video editing with motion graphics and color grading.</p>
+                            <div class="pricing-amount-block">
+                                <span class="pricing-amount" data-monthly="249" data-annual="199"><sup>$</sup>249</span>
+                                <span class="pricing-amount-period">/ project</span>
+                                <div class="pricing-annual-note" id="note-standard"></div>
+                            </div>
+                        </div>
+                        <div class="pricing-card-body">
+                            <ul class="pricing-feature-list">
+                                <li><span class="pf-icon">✓</span> Up to 15-minute final edit</li>
+                                <li><span class="pf-icon">✓</span> 3 structured revision rounds</li>
+                                <li><span class="pf-icon">✓</span> Animated captions + lower thirds</li>
+                                <li><span class="pf-icon">✓</span> Licensed music + sound design</li>
+                                <li><span class="pf-icon">✓</span> Custom motion graphics</li>
+                                <li><span class="pf-icon">✓</span> Professional color correction</li>
+                                <li><span class="pf-icon">✓</span> Social cutdown package</li>
+                                <li><span class="pf-icon">✓</span> 5-day delivery</li>
+                            </ul>
+                            <a class="btn btn-primary" href="contact.html">Choose Standard</a>
+                        </div>
+                    </article>
+
+                    <!-- Premium -->
+                    <article class="pricing-card">
+                        <div class="pricing-card-header">
+                            <span class="pricing-tier-badge badge-premium">Premium</span>
+                            <h3>Cinematic Edit</h3>
+                            <p>Full story edit for brand films, commercials, and long-form content with advanced motion work.</p>
+                            <div class="pricing-amount-block">
+                                <span class="pricing-amount" data-monthly="599" data-annual="479"><sup>$</sup>599</span>
+                                <span class="pricing-amount-period">/ project</span>
+                                <div class="pricing-annual-note" id="note-premium"></div>
+                            </div>
+                        </div>
+                        <div class="pricing-card-body">
+                            <ul class="pricing-feature-list">
+                                <li><span class="pf-icon">✓</span> Unlimited length edit</li>
+                                <li><span class="pf-icon">✓</span> Unlimited revision rounds</li>
+                                <li><span class="pf-icon">✓</span> Advanced After Effects animation</li>
+                                <li><span class="pf-icon">✓</span> Full cinematic color grade</li>
+                                <li><span class="pf-icon">✓</span> Original sound design</li>
+                                <li><span class="pf-icon">✓</span> Priority delivery slot</li>
+                                <li><span class="pf-icon">✓</span> Multi-platform export pack</li>
+                                <li><span class="pf-icon">✓</span> Dedicated project manager</li>
+                            </ul>
+                            <a class="btn btn-secondary" href="contact.html">Choose Premium</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── 3. COMPARISON TABLE — with cinematic background ── -->
+        <section class="pricing-compare-section">
+            <!-- Background image layer -->
+            <div class="compare-bg-layer"></div>
+            <!-- Background video (muted, looped) -->
+            <video class="compare-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="assets/videos/Trusted_bg_video.mp4" type="video/mp4">
+            </video>
+            <!-- Dark overlay -->
+            <div class="compare-bg-overlay"></div>
+
+            <div class="container compare-content-wrap">
+                <div class="section-head text-center compare-head">
+                    <div>
+                        <p class="eyebrow compare-eyebrow">Side by side</p>
+                        <h2 class="compare-title">Compare all plans.</h2>
+                        <p class="compare-subtitle">A full feature breakdown so you can choose exactly the right tier for your project scope.</p>
+                    </div>
+                </div>
+
+                <!-- Responsive table wrapper -->
+                <div class="compare-table-wrap">
+                    <table class="pricing-compare-table" aria-label="Plan feature comparison">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>
+                                    <span class="compare-plan-name">Basic</span>
+                                    <span class="compare-plan-price">$99</span>
+                                </th>
+                                <th class="col-featured">
+                                    <span class="compare-featured-badge">Most Popular</span>
+                                    <span class="compare-plan-name">Standard</span>
+                                    <span class="compare-plan-price">$249</span>
+                                </th>
+                                <th>
+                                    <span class="compare-plan-name">Premium</span>
+                                    <span class="compare-plan-price">$599</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Video length</td><td>Up to 60s</td><td>Up to 15 min</td><td>Unlimited</td></tr>
+                            <tr><td>Revision rounds</td><td>1 round</td><td>3 rounds</td><td>Unlimited</td></tr>
+                            <tr><td>Animated captions</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+                            <tr><td>Beat-sync music</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+                            <tr><td>Motion graphics</td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+                            <tr><td>Color grading</td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+                            <tr><td>Social cutdowns</td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+                            <tr><td>Sound design</td><td><span class="check-no">✗</span></td><td>Basic</td><td>Custom</td></tr>
+                            <tr><td>After Effects work</td><td><span class="check-no">✗</span></td><td>Standard</td><td>Advanced</td></tr>
+                            <tr><td>Priority delivery</td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
+                            <tr><td>Delivery time</td><td>48 hours</td><td>5 days</td><td>Priority slot</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="compare-cta-row">
+                                <td></td>
+                                <td><a href="contact.html" class="btn btn-secondary compare-btn">Choose Basic</a></td>
+                                <td><a href="contact.html" class="btn btn-primary compare-btn">Choose Standard</a></td>
+                                <td><a href="contact.html" class="btn btn-secondary compare-btn">Choose Premium</a></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── 4. ADD-ON CARDS ── -->
+        <section class="section pricing-addons-section">
+            <div class="container">
+                <div class="section-head text-center" style="margin-bottom: 0;">
+                    <div>
+                        <p class="eyebrow">Package add-ons</p>
+                        <h2>Upgrade any plan.</h2>
+                        <p>Add specialist deliverables to any tier — billed alongside your base project at transparent flat rates.</p>
+                    </div>
+                </div>
+                <div class="pricing-addons-grid">
+                    <div class="pricing-addon-card">
+                        <video class="pricing-addon-img" autoplay muted loop playsinline preload="metadata" aria-label="Animated captions add-on preview">
+                            <source src="assets/videos/animatedd_caption_pack.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="pricing-addon-body">
+                            <span class="pricing-addon-tag">Visual</span>
+                            <h3>Animated Caption Pack</h3>
+                            <p>Branded subtitles with emphasis words, speaker labels, custom fonts, and social-safe text placement across all platforms.</p>
+                            <div class="pricing-addon-price">From $25 / video</div>
+                        </div>
+                    </div>
+                    <div class="pricing-addon-card">
+                        <video class="pricing-addon-img" autoplay muted loop playsinline preload="metadata" aria-label="Thumbnail and cover frames add-on preview">
+                            <source src="assets/videos/Thumbnail%20%26%20Cover%20Frames.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="pricing-addon-body">
+                            <span class="pricing-addon-tag">Design</span>
+                            <h3>Thumbnail &amp; Cover Frames</h3>
+                            <p>High-click-rate thumbnail design exports for YouTube, Instagram, LinkedIn, and Facebook with optimized composition and contrast.</p>
+                            <div class="pricing-addon-price">From $15 / thumbnail</div>
+                        </div>
+                    </div>
+                    <div class="pricing-addon-card">
+                        <video class="pricing-addon-img" autoplay muted loop playsinline preload="metadata" aria-label="Priority turnaround add-on preview">
+                            <source src="assets/videos/Priority%20Turnaround.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="pricing-addon-body">
+                            <span class="pricing-addon-tag">Delivery</span>
+                            <h3>Priority Turnaround</h3>
+                            <p>Reserved editing time for urgent launches, campaign dates, and creator posting schedules. Guaranteed first-priority queue slot.</p>
+                            <div class="pricing-addon-price">+$85 per project</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── 5. QUOTE FACTORS SPLIT ── -->
+        <section class="section pricing-factors-section">
+            <div class="container">
+                <div class="pricing-factors-layout">
+                    <div class="pricing-factors-image">
+                        <img src="assets/images/pricing-quote-planning.jpg" alt="Pricing and quote planning workspace">
+                    </div>
+                    <div class="pricing-factors-content">
+                        <p class="eyebrow">Quote clarity</p>
+                        <h2>What affects your final quote.</h2>
+                        <p class="lead">Every project is different. These four factors determine the final price — understanding them helps you brief accurately and receive a realistic estimate on the first reply.</p>
+                        <div class="pricing-factor-items">
+                            <div class="pricing-factor-item">
+                                <div class="pricing-factor-icon">🎬</div>
+                                <div>
+                                    <strong>Raw Footage Length</strong>
+                                    <p>Longer recordings need more review time, stronger organization, and clearer story selection before editing begins.</p>
+                                </div>
+                            </div>
+                            <div class="pricing-factor-item">
+                                <div class="pricing-factor-icon">✨</div>
+                                <div>
+                                    <strong>Animation Depth</strong>
+                                    <p>Simple captions, custom lower thirds, UI animations, and advanced After Effects motion each affect scope and delivery time.</p>
+                                </div>
+                            </div>
+                            <div class="pricing-factor-item">
+                                <div class="pricing-factor-icon">📦</div>
+                                <div>
+                                    <strong>Platform Versions</strong>
+                                    <p>One master edit can become reels, shorts, ad ratios, thumbnails, and clean archive versions — each adds preparation time.</p>
+                                </div>
+                            </div>
+                            <div class="pricing-factor-item">
+                                <div class="pricing-factor-icon">🔍</div>
+                                <div>
+                                    <strong>Revision Structure</strong>
+                                    <p>Clear timestamps, one feedback source, and grouped notes keep revision rounds fast and pricing predictable for both sides.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── 6. HOW BILLING WORKS — New useful section ── -->
+        <section class="section billing-process-section">
+            <div class="container">
+                <div class="section-head text-center billing-head">
+                    <div>
+                        <p class="eyebrow">Simple process</p>
+                        <h2>How billing works.</h2>
+                        <p class="billing-head-sub">From first brief to final invoice — a transparent, four-step process with no surprises, no hidden fees, and clear communication at every stage.</p>
+                    </div>
+                </div>
+
+                <div class="billing-steps-grid">
+
+                    <!-- Step 1 -->
+                    <div class="billing-step">
+                        <div class="billing-step-icon-wrap">
+                            <span class="billing-step-icon"></span>
+                            <span class="billing-step-num">01</span>
+                        </div>
+                        <h3>Submit Your Brief</h3>
+                        <p>Share your footage, project goals, target platform, deadline, and any style references using our contact form or direct message. The more detail you provide, the faster we can scope your project accurately.</p>
+                        <ul class="billing-step-list">
+                            <li>Platform &amp; format requirements</li>
+                            <li>Raw footage length estimate</li>
+                            <li>Visual style references</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="billing-step">
+                        <div class="billing-step-icon-wrap">
+                            <span class="billing-step-icon"></span>
+                            <span class="billing-step-num">02</span>
+                        </div>
+                        <h3>Receive Your Quote</h3>
+                        <p>Within 24 hours you'll receive a fully itemized quote outlining the recommended plan tier, any add-ons, delivery timeline, and revision structure. No vague estimates — every line is explained.</p>
+                        <ul class="billing-step-list">
+                            <li>Itemized pricing breakdown</li>
+                            <li>Delivery timeline confirmed</li>
+                            <li>Revision rounds outlined</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="billing-step">
+                        <div class="billing-step-icon-wrap">
+                            <span class="billing-step-icon"></span>
+                            <span class="billing-step-num">03</span>
+                        </div>
+                        <h3>Approve &amp; Kickoff</h3>
+                        <p>Once you approve the quote, a 50% deposit secures your production slot. Editing begins immediately — you'll receive a project kickoff summary with milestones, check-in points, and your first delivery estimate.</p>
+                        <ul class="billing-step-list">
+                            <li>50% deposit to start</li>
+                            <li>Production slot reserved</li>
+                            <li>Milestone dates confirmed</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="billing-step">
+                        <div class="billing-step-icon-wrap">
+                            <span class="billing-step-icon"></span>
+                            <span class="billing-step-num">04</span>
+                        </div>
+                        <h3>Deliver &amp; Final Pay</h3>
+                        <p>After revisions are approved and the final master file is ready, the remaining 50% balance is billed before full file handoff. You'll receive all platform-optimized exports, source files, and a delivery summary.</p>
+                        <ul class="billing-step-list">
+                            <li>Final balance on approval</li>
+                            <li>All exports &amp; source files</li>
+                            <li>30-day post-delivery support</li>
+                        </ul>
+                    </div>
+
+                </div><!-- /.billing-steps-grid -->
+
+                <!-- Reassurance bar -->
+                <div class="billing-reassurance">
+                    <div class="billing-reassure-item">
+                        <span class="reassure-icon">★</span>
+                        <span>Secure payment via bank transfer, PayPal, or Stripe</span>
+                    </div>
+                    <div class="billing-reassure-item">
+                        <span class="reassure-icon">★</span>
+                        <span>Written agreement provided for every project</span>
+                    </div>
+                    <div class="billing-reassure-item">
+                        <span class="reassure-icon">★</span>
+                        <span>No charge until you approve the final quote</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── 7. CTA BAND ── -->
+        <section class="pricing-cta-band">
+            <div class="cta-bg"></div>
+            <div class="container">
+                <div class="cta-inner">
+                    <p class="eyebrow">Get a custom quote</p>
+                    <h2>Not sure which plan fits?</h2>
+                    <p>Send a project brief and get a tailored quote within 24 hours — no commitment required. We'll recommend the right tier based on your footage, goals, and deadline.</p>
+                    <div class="cta-actions">
+                        <a class="btn btn-primary" href="contact.html">Request a Quote</a>
+                        <a class="btn btn-secondary" href="portfolio.html">View Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container"><a class="logo brand-lockup footer-brand" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a>
+            <div class="footer-grid">
+                <div>
+                    <h3>FrameFusion Studio</h3>
+                    <p>Freelance video editing, motion graphics, reels, ads, YouTube content, and brand visuals.</p>
+                    <div class="socials"><a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram-logo.svg" alt="Instagram"></a><a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="assets/icons/linkedin-logo.svg" alt="LinkedIn"></a><a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube-logo.svg" alt="YouTube"></a><a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook-logo.svg" alt="Facebook"></a></div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3><a href="index.html">Home</a><br><a href="services.html">Services</a><br><a
+                        href="portfolio.html">Portfolio</a><br><a href="pricing.html">Pricing</a>
+                </div>
+                <div>
+                    <h3>Availability</h3>
+                    <p>Mon-Fri: 9:00-18:00<br>Sat: 10:00-15:00<br>Fast delivery by request</p>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>hello@framefusion.studio<br>+91 98765 43210</p><a href="contact.html">Send project inquiry</a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 FrameFusion Studio. Video editing and motion graphics portfolio.</div>
+        </div>
+    </footer>
+    <script src="js/main.js?v=50"></script>
+</body>
+
+</html>
+
+

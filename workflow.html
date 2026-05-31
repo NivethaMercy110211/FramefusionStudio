@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow | FrameFusion Studio</title>
+    <meta name="description" content="Discover FrameFusion Studio's 5-step video editing workflow — from project brief to final multi-platform delivery. Transparent, fast, and client-aligned.">
+    <link rel="icon" href="assets/images/framefusion-favicon.png?v=2" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=50">
+    <style>
+        /* =========================================================
+           WORKFLOW PAGE — LOCAL STYLES
+           ========================================================= */
+
+        /* ---- Hero ---- */
+        .wf-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: clamp(80px, 10vw, 130px) 0 clamp(60px, 8vw, 100px);
+            background:
+                linear-gradient(160deg, rgba(5,3,20,0.97) 0%, rgba(18,6,55,0.93) 50%, rgba(5,3,20,0.97) 100%),
+                radial-gradient(ellipse at 15% 60%, color-mix(in srgb, var(--brand-2) 18%, transparent), transparent 55%),
+                radial-gradient(ellipse at 85% 30%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 50%);
+            text-align: center;
+        }
+        .wf-hero h1 { color: #fff; margin-bottom: 16px; }
+        .wf-hero .eyebrow { margin-bottom: 14px; }
+        .wf-hero .lead {
+            color: rgba(255,255,255,0.70);
+            max-width: 600px;
+            margin-inline: auto;
+            margin-bottom: 36px;
+        }
+        .wf-hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .wf-hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            border-radius: 40px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.14);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.85);
+            backdrop-filter: blur(8px);
+        }
+        .wf-hero-pill span { color: var(--brand-2); font-size: 0.9rem; }
+
+        /* ---- Step Timeline ---- */
+        .wf-steps-section { background: var(--bg); }
+        .wf-steps-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+            padding-left: 56px;
+            margin-top: 48px;
+        }
+        /* Vertical rail */
+        .wf-steps-grid::before {
+            content: "";
+            position: absolute;
+            left: 21px;
+            top: 28px;
+            bottom: 28px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--brand-2), var(--accent), var(--brand));
+            opacity: 0.3;
+        }
+
+        /* Individual step row */
+        .wf-step {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0 24px;
+            padding: 28px 0;
+            position: relative;
+            border-bottom: 1px solid var(--line);
+            transition: background 0.2s ease;
+        }
+        .wf-step:last-child { border-bottom: none; }
+        .wf-step:hover { background: color-mix(in srgb, var(--brand-2) 4%, transparent); border-radius: var(--radius); }
+
+        /* Number badge — sits on the rail */
+        .wf-step-badge {
+            position: absolute;
+            left: -56px;
+            top: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: color-mix(in srgb, var(--brand-2) 14%, var(--surface));
+            border: 2px solid var(--brand-2);
+            color: var(--brand-2);
+            font-size: 0.9rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 18px color-mix(in srgb, var(--brand-2) 30%, transparent);
+            transition: box-shadow 0.3s ease;
+            z-index: 1;
+        }
+        .wf-step:hover .wf-step-badge {
+            box-shadow: 0 0 28px color-mix(in srgb, var(--brand-2) 55%, transparent);
+        }
+
+        .wf-step-body { display: flex; flex-direction: column; gap: 6px; }
+        .wf-step-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--brand-2);
+            margin-bottom: 2px;
+        }
+        .wf-step h3 { font-size: 1.15rem; font-weight: 800; margin: 0; }
+        .wf-step p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; margin: 0; max-width: 640px; }
+
+        /* Details bullets row */
+        .wf-step-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 10px;
+        }
+        .wf-step-detail {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .wf-step-detail::before {
+            content: "✦";
+            color: var(--brand-2);
+            font-size: 0.58rem;
+        }
+
+        /* ---- Collaboration Split Section ---- */
+        .wf-collab-section { background: var(--surface); }
+        .wf-collab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .wf-collab-content { display: flex; flex-direction: column; gap: 20px; }
+        .wf-collab-content h2 { margin: 0; }
+        .wf-collab-content .lead { color: var(--muted); margin: 0; }
+        .wf-collab-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 8px;
+        }
+        .wf-collab-feature {
+            padding: 16px;
+            border-radius: calc(var(--radius) - 2px);
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .wf-collab-feature:hover { border-color: var(--brand-2); transform: translateY(-2px); }
+        .wf-collab-feature strong { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-2); }
+        .wf-collab-feature h4 { font-size: 0.92rem; font-weight: 800; margin: 0; }
+        .wf-collab-feature p { font-size: 0.8rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+        .wf-collab-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            border: 1px solid var(--line);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+        }
+        .wf-collab-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+        .wf-collab-image:hover img { transform: scale(1.04); }
+
+        /* ---- Delivery Section ---- */
+        .wf-delivery-section { background: var(--bg); }
+        .wf-delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .wf-delivery-card {
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            background: var(--surface);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .wf-delivery-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-2);
+            box-shadow: 0 20px 48px rgba(124, 58, 237, 0.12);
+        }
+        .wf-delivery-media {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+        .wf-delivery-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        .wf-delivery-card:hover .wf-delivery-media img { transform: scale(1.05); }
+        .wf-delivery-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .wf-delivery-icon {
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+        .wf-delivery-body h3 { font-size: 1rem; font-weight: 800; margin: 0; }
+        .wf-delivery-body p { font-size: 0.83rem; color: var(--muted); line-height: 1.55; margin: 0; }
+        .wf-delivery-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+        .wf-delivery-tag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 2px 9px;
+            border-radius: 20px;
+            background: color-mix(in srgb, var(--brand-2) 10%, var(--surface-2));
+            border: 1px solid color-mix(in srgb, var(--brand-2) 25%, transparent);
+            color: var(--brand-2);
+        }
+
+        /* ---- CTA Strip ---- */
+        .wf-cta-section {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: clamp(56px, 7vw, 88px) 0;
+            text-align: center;
+            background:
+                linear-gradient(160deg, rgba(5,3,20,0.97) 0%, rgba(18,6,55,0.93) 60%, rgba(5,3,20,0.97) 100%),
+                radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--brand-2) 20%, transparent), transparent 60%);
+        }
+        .wf-cta-section h2 { color: #fff; margin-bottom: 12px; }
+        .wf-cta-section p { color: rgba(255,255,255,0.68); max-width: 520px; margin: 0 auto 32px; }
+        .wf-cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+        @media (max-width: 1023px) {
+            .wf-collab-grid { grid-template-columns: 1fr; gap: 32px; }
+            .wf-collab-image { order: -1; aspect-ratio: 16 / 7; }
+            .wf-delivery-grid { grid-template-columns: repeat(2, 1fr); }
+            @media (min-width: 768px) {
+                .wf-delivery-grid > :last-child:nth-child(odd) {
+                    grid-column: 1 / -1;
+                    justify-self: center;
+                    width: 100%;
+                    max-width: calc((100% - 24px) / 2);
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            .wf-steps-grid { padding-left: 40px; }
+            .wf-step-badge { left: -40px; width: 36px; height: 36px; font-size: 0.8rem; }
+            .wf-collab-features { grid-template-columns: 1fr; }
+            .wf-delivery-grid { grid-template-columns: 1fr; gap: 16px; }
+            .wf-hero-pills { gap: 8px; }
+            .wf-cta-actions { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header"><nav class="nav container"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><div class="desktop-nav"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm desktop-only" href="contact.html">Start Project</a><button class="icon-btn icon-btn-theme desktop-only" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button><button class="icon-btn icon-btn-dir" data-dir-toggle type="button" aria-label="Switch to right-to-left">RTL</button><button class="icon-btn hamburger" data-menu-open type="button" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav></header><div class="mobile-overlay" data-menu-close></div><aside class="mobile-panel"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><nav><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></nav><div class="mobile-tools"><button class="icon-btn icon-btn-theme" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button></div></aside>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section class="wf-hero">
+            <div class="container">
+                <p class="eyebrow">Our Process</p>
+                <h1>The FrameFusion Workflow</h1>
+                <p class="lead">A transparent, client-aligned 5-step editing process built for speed, clarity, and zero revision confusion.</p>
+                <div class="wf-hero-pills">
+                    <div class="wf-hero-pill"><span>★</span> 5-Step Process</div>
+                    <div class="wf-hero-pill"><span>★</span> 48h Revision Turns</div>
+                    <div class="wf-hero-pill"><span>★</span> Frame-Accurate Feedback</div>
+                    <div class="wf-hero-pill"><span>★</span> Multi-Platform Delivery</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STEP TIMELINE ===== -->
+        <section class="section wf-steps-section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Step by Step</p>
+                        <h2>Simple Editing Process</h2>
+                        <p class="lead">From first message to final file — every phase is transparent, trackable, and client-approved before we move forward.</p>
+                    </div>
+                </div>
+
+                <div class="wf-steps-grid">
+
+                    <!-- Step 01 -->
+                    <article class="wf-step">
+                        <div class="wf-step-badge">01</div>
+                        <div class="wf-step-body">
+                            <span class="wf-step-tag">Discovery</span>
+                            <h3>Project Discussion</h3>
+                            <p>We kick off with a structured brief call or form covering scope, goals, tone, style references, deadline, platform targets, and deliverable formats. Nothing moves forward until we're aligned.</p>
+                            <div class="wf-step-details">
+                                <span class="wf-step-detail">Creative Brief Form</span>
+                                <span class="wf-step-detail">Style References</span>
+                                <span class="wf-step-detail">Deadline Agreement</span>
+                                <span class="wf-step-detail">Platform Targeting</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Step 02 -->
+                    <article class="wf-step">
+                        <div class="wf-step-badge">02</div>
+                        <div class="wf-step-body">
+                            <span class="wf-step-tag">Asset Handoff</span>
+                            <h3>Footage Submission</h3>
+                            <p>You upload raw footage, brand assets, logos, music preferences, subtitle scripts, and any reference cuts to our secure shared folder. We confirm receipt and audit all files before editing begins.</p>
+                            <div class="wf-step-details">
+                                <span class="wf-step-detail">Raw Footage Upload</span>
+                                <span class="wf-step-detail">Brand Kit Assets</span>
+                                <span class="wf-step-detail">Music Selection</span>
+                                <span class="wf-step-detail">Asset Audit Confirmation</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Step 03 -->
+                    <article class="wf-step">
+                        <div class="wf-step-badge">03</div>
+                        <div class="wf-step-body">
+                            <span class="wf-step-tag">Production</span>
+                            <h3>Editing &amp; Motion Design</h3>
+                            <p>Our editing suite handles assembly, story pacing, lower-thirds, captions, colour grading, sound design, motion graphics, and kinetic animations — all in one pass to keep the timeline clean.</p>
+                            <div class="wf-step-details">
+                                <span class="wf-step-detail">Narrative Assembly</span>
+                                <span class="wf-step-detail">Colour Grading</span>
+                                <span class="wf-step-detail">Sound Design</span>
+                                <span class="wf-step-detail">Motion Graphics</span>
+                                <span class="wf-step-detail">Captions &amp; Titles</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Step 04 -->
+                    <article class="wf-step">
+                        <div class="wf-step-badge">04</div>
+                        <div class="wf-step-body">
+                            <span class="wf-step-tag">Review</span>
+                            <h3>Review &amp; Revisions</h3>
+                            <p>We share a private preview link. Revision notes are submitted by timecode so every change is pinpointed, actioned, and confirmed within 48 hours — no ambiguity, no back-and-forth confusion.</p>
+                            <div class="wf-step-details">
+                                <span class="wf-step-detail">Timecode Feedback</span>
+                                <span class="wf-step-detail">Version Control</span>
+                                <span class="wf-step-detail">48h Revision Turns</span>
+                                <span class="wf-step-detail">Change Confirmation</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Step 05 -->
+                    <article class="wf-step">
+                        <div class="wf-step-badge">05</div>
+                        <div class="wf-step-body">
+                            <span class="wf-step-tag">Delivery</span>
+                            <h3>Final Delivery</h3>
+                            <p>Platform-ready files are exported in all requested formats — 4K master, social crops, compressed previews — and handed off in a named, structured folder with SRT subtitles and archival source files.</p>
+                            <div class="wf-step-details">
+                                <span class="wf-step-detail">4K YouTube Master</span>
+                                <span class="wf-step-detail">Social Crop Exports</span>
+                                <span class="wf-step-detail">SRT Subtitle Files</span>
+                                <span class="wf-step-detail">Archive Source Link</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COLLABORATION SPLIT ===== -->
+        <section class="section wf-collab-section">
+            <div class="container">
+                <div class="wf-collab-grid">
+
+                    <div class="wf-collab-content">
+                        <p class="eyebrow">Collaboration Detail</p>
+                        <h2>A workflow designed to reduce revision confusion.</h2>
+                        <p class="lead">Between every step, you stay informed. We use shared drives, preview links, and timecode-anchored feedback so nothing gets lost in translation.</p>
+                        <div class="wf-collab-features">
+                            <div class="wf-collab-feature">
+                                <strong>Brief</strong>
+                                <h4>Reference Collection</h4>
+                                <p>Competitor links, brand guides, music direction, caption style, and pacing examples gathered before a single cut.</p>
+                            </div>
+                            <div class="wf-collab-feature">
+                                <strong>Review</strong>
+                                <h4>Timestamp Feedback</h4>
+                                <p>Notes are grouped by timecode so every change is precise, actionable, and easy to complete without miscommunication.</p>
+                            </div>
+                            <div class="wf-collab-feature">
+                                <strong>Files</strong>
+                                <h4>Delivery Folder</h4>
+                                <p>Exports named by platform, ratio, version, date, and final status — ready for instant deployment.</p>
+                            </div>
+                            <div class="wf-collab-feature">
+                                <strong>Support</strong>
+                                <h4>Post-Delivery Care</h4>
+                                <p>Minor corrections within 7 days of delivery included. Quick turnaround guaranteed on approved change requests.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wf-collab-image">
+                        <img src="assets/images/workflow-handoff-social.jpg" alt="Video review board with timestamp feedback">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DELIVERY CARDS ===== -->
+        <section class="section wf-delivery-section">
+            <div class="container">
+                <div class="section-head text-center">
+                    <div>
+                        <p class="eyebrow">Client Handoff</p>
+                        <h2>What You Receive at the End</h2>
+                        <p class="lead">Every project closes with a complete, platform-ready delivery package — nothing left out.</p>
+                    </div>
+                </div>
+
+                <div class="wf-delivery-grid">
+
+                    <article class="wf-delivery-card">
+                        <div class="wf-delivery-media">
+                            <img src="assets/images/workflow-handoff-master.jpg" alt="Master video export handoff">
+                        </div>
+                        <div class="wf-delivery-body">
+                            <div class="wf-delivery-icon">🎬</div>
+                            <h3>Master Export</h3>
+                            <p>High-resolution main video suitable for YouTube, website, client presentation, or long-term archive use.</p>
+                            <div class="wf-delivery-tags">
+                                <span class="wf-delivery-tag">4K / 1080p</span>
+                                <span class="wf-delivery-tag">H.264 / ProRes</span>
+                                <span class="wf-delivery-tag">YouTube Ready</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="wf-delivery-card">
+                        <div class="wf-delivery-media">
+                            <img src="assets/images/workflow-review-board_workflow.jpg" alt="Social media video exports">
+                        </div>
+                        <div class="wf-delivery-body">
+                            <div class="wf-delivery-icon">📱</div>
+                            <h3>Social Versions</h3>
+                            <p>Vertical, square, and landscape crops prepared for Reels, Shorts, TikTok, LinkedIn ads, and Stories.</p>
+                            <div class="wf-delivery-tags">
+                                <span class="wf-delivery-tag">9:16 Vertical</span>
+                                <span class="wf-delivery-tag">1:1 Square</span>
+                                <span class="wf-delivery-tag">16:9 Landscape</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="wf-delivery-card">
+                        <div class="wf-delivery-media">
+                            <img src="assets/images/workflow-handoff-assets1.jpg" alt="Final assets folder">
+                        </div>
+                        <div class="wf-delivery-body">
+                            <div class="wf-delivery-icon">📦</div>
+                            <h3>Asset Folder</h3>
+                            <p>Captions (SRT), thumbnails, compressed preview files, chapter stills, and a clean named folder structure.</p>
+                            <div class="wf-delivery-tags">
+                                <span class="wf-delivery-tag">SRT Subtitles</span>
+                                <span class="wf-delivery-tag">Thumbnails</span>
+                                <span class="wf-delivery-tag">Archive Link</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA STRIP ===== -->
+        <section class="wf-cta-section">
+            <div class="container">
+                <p class="eyebrow">Ready to Start?</p>
+                <h2>Let's Build Your Project</h2>
+                <p>Tell us your brief and we'll send a production outline and quote within 24 hours.</p>
+                <div class="wf-cta-actions">
+                    <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                    <a href="pricing.html" class="btn btn-outline">View Pricing</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container"><a class="logo brand-lockup footer-brand" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a>
+            <div class="footer-grid">
+                <div>
+                    <h3>FrameFusion Studio</h3>
+                    <p>Freelance video editing, motion graphics, reels, ads, YouTube content, and brand visuals.</p>
+                    <div class="socials"><a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram-logo.svg" alt="Instagram"></a><a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="assets/icons/linkedin-logo.svg" alt="LinkedIn"></a><a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube-logo.svg" alt="YouTube"></a><a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook-logo.svg" alt="Facebook"></a></div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3><a href="index.html">Home</a><br><a href="services.html">Services</a><br><a href="portfolio.html">Portfolio</a><br><a href="pricing.html">Pricing</a>
+                </div>
+                <div>
+                    <h3>Availability</h3>
+                    <p>Mon-Fri: 9:00-18:00<br>Sat: 10:00-15:00<br>Fast delivery by request</p>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>hello@framefusion.studio<br>+91 98765 43210</p><a href="contact.html">Send project inquiry</a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 FrameFusion Studio. Video editing and motion graphics portfolio.</div>
+        </div>
+    </footer>
+    <script src="js/main.js?v=50"></script>
+</body>
+
+</html>

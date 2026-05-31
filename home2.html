@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2 | FrameFusion Studio</title>
+    <link rel="icon" href="assets/images/framefusion-favicon.png?v=2" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=50">
+</head>
+
+<body>
+    <header class="site-header"><nav class="nav container"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><div class="desktop-nav"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm desktop-only active" href="login.html">Login</a><button class="icon-btn icon-btn-theme desktop-only" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button><button class="icon-btn icon-btn-dir" data-dir-toggle type="button" aria-label="Switch to right-to-left">RTL</button><button class="icon-btn hamburger" data-menu-open type="button" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav></header><div class="mobile-overlay" data-menu-close></div><aside class="mobile-panel"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><nav><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a class="active" href="login.html">Login</a></nav><div class="mobile-tools"><button class="icon-btn icon-btn-theme" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button></div></aside>
+    <main>
+        <section class="hero agency-hero">
+            <div class="container split">
+                <div>
+                    <div class="hero-badge-pill">★ Premium Video Studio</div>
+                    <p class="eyebrow">Creative Agency Partner</p>
+                    <h1>Creative Video Editing</h1>
+                    <p class="lead">Helping creators and brands grow with engaging visual content, reels, ads, and
+                        motion design.</p>
+                    <div class="actions">
+                        <a class="btn btn-primary" href="portfolio.html">Explore Portfolio</a>
+                        <button class="btn btn-secondary" id="openShowreelBtn" type="button">Watch Showreel</button>
+                        <a class="btn btn-secondary" href="contact.html">Hire Me</a>
+                    </div>
+                </div>
+                <div class="hero-media"><img src="assets/images/home2-agency-hero.jpg"
+                        alt="Creative video editing agency style image"></div>
+            </div>
+        </section>
+        
+        <!-- Partner Logo Cloud -->
+        <section class="partners-logo-section">
+            <div class="container partners-container">
+                <span class="partners-tagline">Trusted by Industry Leaders & Top Creators</span>
+                <div class="partners-track">
+                    <span class="partner-logo">CREATOR.CO</span>
+                    <span class="partner-logo">ALPHA LABS</span>
+                    <span class="partner-logo">METRIC MEDIA</span>
+                    <span class="partner-logo">WAVE STUDIOS</span>
+                    <span class="partner-logo">PACIFIC FILMS</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="stats">
+                    <div class="stat"><strong>120+</strong><span>Projects Completed</span></div>
+                    <div class="stat"><strong>80+</strong><span>Happy Clients</span></div>
+                    <div class="stat"><strong>5+</strong><span>Years Experience</span></div>
+                    <div class="stat"><strong>98%</strong><span>Client Satisfaction</span></div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== CINEMATIC COLOR GRADING DECK — New Innovative Showcase Section ===== -->
+        <section class="section alt home2-colorist-section">
+            <div class="container">
+                <div class="section-head text-center">
+                    <div>
+                        <p class="eyebrow">Creative grading</p>
+                        <h2>DaVinci Colorist Panel</h2>
+                        <p class="lead">Interact with our signature post-production workspace. Apply custom LUT presets or adjust the primary offset wheel to see flat camera feeds transform into cinematic masters.</p>
+                    </div>
+                </div>
+
+                <div class="colorist-deck-card">
+                    <!-- Left: live grading viewport + scopes -->
+                    <div class="colorist-viewport-panel">
+                        <div class="colorist-monitor-frame">
+                            <video id="coloristVideo" autoplay muted loop playsinline preload="metadata" class="color-graded-log">
+                                <source src="assets/videos/cinimatic_travel_edit1.mp4" type="video/mp4">
+                            </video>
+                            <div class="colorist-monitor-overlay"></div>
+                            <span class="colorist-badge" id="activeLutLabel">LOG RAW FEED (0% GRADING)</span>
+                        </div>
+                        
+                        <!-- Real-time color scopes (digital waveform simulation) -->
+                        <div class="colorist-scopes-wrap">
+                            <span class="scope-label">WAVEFORM / CHANNELS</span>
+                            <div class="colorist-scopes-grid" id="scopesGrid">
+                                <div class="scope-bar bar-red" style="height: 30%"></div>
+                                <div class="scope-bar bar-green" style="height: 25%"></div>
+                                <div class="scope-bar bar-blue" style="height: 35%"></div>
+                                <div class="scope-bar bar-red" style="height: 40%"></div>
+                                <div class="scope-bar bar-green" style="height: 38%"></div>
+                                <div class="scope-bar bar-blue" style="height: 42%"></div>
+                                <div class="scope-bar bar-red" style="height: 32%"></div>
+                                <div class="scope-bar bar-green" style="height: 28%"></div>
+                                <div class="scope-bar bar-blue" style="height: 36%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: LUT controller deck & wheels -->
+                    <div class="colorist-controls-panel">
+                        <h3>LUT Color Profiles</h3>
+                        <div class="lut-selectors-grid">
+                            <button class="lut-btn active" data-lut="log" type="button">
+                                <span class="lut-dot dot-log"></span>
+                                <div>
+                                    <b>Log Raw Footage</b>
+                                    <span>Flat profile, 0% color calibration</span>
+                                </div>
+                            </button>
+                            <button class="lut-btn" data-lut="teal-orange" type="button">
+                                <span class="lut-dot dot-teal-orange"></span>
+                                <div>
+                                    <b>Teal &amp; Orange</b>
+                                    <span>Cinematic warmth, rich skin tones, teal contrast</span>
+                                </div>
+                            </button>
+                            <button class="lut-btn" data-lut="cyberpunk" type="button">
+                                <span class="lut-dot dot-cyberpunk"></span>
+                                <div>
+                                    <b>Cyberpunk Neon</b>
+                                    <span>Vibrant magenta offsets, electric cyan shadows</span>
+                                </div>
+                            </button>
+                            <button class="lut-btn" data-lut="vintage" type="button">
+                                <span class="lut-dot dot-vintage"></span>
+                                <div>
+                                    <b>Vintage Film</b>
+                                    <span>Retro sepia highlights, warm print emulation</span>
+                                </div>
+                            </button>
+                            <button class="lut-btn" data-lut="noir" type="button">
+                                <span class="lut-dot dot-noir"></span>
+                                <div>
+                                    <b>Moody Noir</b>
+                                    <span>High-contrast monochrome scale, deep black tones</span>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Secondary: interactive offset color wheel -->
+                        <div class="color-wheel-section">
+                            <h4>Shadows / Highlights Offset</h4>
+                            <div class="wheel-flex-container">
+                                <div class="interactive-color-wheel" id="colorWheelDeck">
+                                    <div class="wheel-gradient-disc"></div>
+                                    <div class="wheel-crosshair" id="wheelCrosshair" style="top: 50%; left: 50%;"></div>
+                                </div>
+                                <div class="wheel-data-readout">
+                                    <div class="readout-item"><span>RED OFFSET:</span> <strong id="redVal">0.0</strong></div>
+                                    <div class="readout-item"><span>GREEN OFFSET:</span> <strong id="greenVal">0.0</strong></div>
+                                    <div class="readout-item"><span>BLUE OFFSET:</span> <strong id="blueVal">0.0</strong></div>
+                                    <button class="btn btn-secondary btn-sm reset-wheel-btn" id="resetWheelBtn" type="button">Reset Offset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Interactive Captions Simulator Section -->
+        <section class="section captions-simulator-section alt">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Captions Suite</p>
+                        <h2>Kinetic Caption Designer</h2>
+                        <p class="lead">Select a style template to see how we customize fonts, glow effects, highlight colors, and interactive emojis to optimize engagement.</p>
+                    </div>
+                </div>
+                <div class="captions-simulator-card">
+                    <!-- Left: Simulated Viewport -->
+                    <div class="sim-video-viewport">
+                        <img class="sim-video-backdrop" src="assets/images/home-hero-video-editor1.jpg" alt="Video editor talking head model backdrop">
+                        <div class="sim-overlay-gradient"></div>
+                        <div class="sim-caption-container">
+                            <p class="sim-caption-text caption-style-hormozi" id="captionOutput">
+                                We design <span class="accent-word">retention-focused</span> captions that keep viewers hooked! <span class="emoji">🔥</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Right: Style selectors -->
+                    <div class="sim-controls-panel">
+                        <h3>Interactive Templates</h3>
+                        <div class="sim-selectors-grid">
+                            <button class="sim-style-btn active" data-style="hormozi" type="button">
+                                <div class="sim-style-icon">01</div>
+                                <div>
+                                    <b>Hormozi Punch</b>
+                                    <span>High energy, thick outlines, bold emojis</span>
+                                </div>
+                            </button>
+                            <button class="sim-style-btn" data-style="neon" type="button">
+                                <div class="sim-style-icon">02</div>
+                                <div>
+                                    <b>Cyberpunk Neon Glow</b>
+                                    <span>High tech glow, italic text, styled highlights</span>
+                                </div>
+                            </button>
+                            <button class="sim-style-btn" data-style="minimal" type="button">
+                                <div class="sim-style-icon">03</div>
+                                <div>
+                                    <b>Cinematic Subtitles</b>
+                                    <span>Clean serif, elegant spacing, elegant lower-thirds</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Sound Mixer & Visualizer Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Audio Polish</p>
+                        <h2>Sound Design Dashboard</h2>
+                        <p class="lead">Trigger individual custom cinematic layers and see our pro vocal equalization visualizer activate in real time.</p>
+                    </div>
+                </div>
+                <div class="sound-mixer-card">
+                    <!-- Left: Track Controls -->
+                    <div class="mixer-controls-stack">
+                        <h3>Vocal & FX Tracks</h3>
+                        <div class="mixer-track-row active" data-track="vocals">
+                            <div class="mixer-track-info">
+                                <h4>Vocal Sweep EQ</h4>
+                                <p>Deep background voice noise reduction & pop filtration</p>
+                            </div>
+                            <button class="mixer-trigger-btn" type="button">✓</button>
+                        </div>
+                        <div class="mixer-track-row" data-track="risers">
+                            <div class="mixer-track-info">
+                                <h4>Cinematic Risers</h4>
+                                <p>High-tension auditory build-ups for transition edits</p>
+                            </div>
+                            <button class="mixer-trigger-btn" type="button">▶</button>
+                        </div>
+                        <div class="mixer-track-row" data-track="sfx">
+                            <div class="mixer-track-info">
+                                <h4>Impact SFX & Whooshes</h4>
+                                <p>Tactile dynamic whooshes matched to screen graphics</p>
+                            </div>
+                            <button class="mixer-trigger-btn" type="button">▶</button>
+                        </div>
+                    </div>
+                    <!-- Right: EQ Visualizer -->
+                    <div class="mixer-visualizer-container">
+                        <div class="equalizer-wave-frame" id="equalizerWave">
+                            <div class="equalizer-bar" style="height: 40%"></div>
+                            <div class="equalizer-bar" style="height: 60%"></div>
+                            <div class="equalizer-bar" style="height: 80%"></div>
+                            <div class="equalizer-bar" style="height: 50%"></div>
+                            <div class="equalizer-bar" style="height: 30%"></div>
+                            <div class="equalizer-bar" style="height: 70%"></div>
+                            <div class="equalizer-bar" style="height: 90%"></div>
+                            <div class="equalizer-bar" style="height: 40%"></div>
+                        </div>
+                        <div class="mixer-status-pill playing" id="mixerStatus">Vocals EQ Active</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head text-center">
+                    <div>
+                        <p class="eyebrow">Project Showcase</p>
+                        <h2>Recent work showcase.</h2>
+                    </div>
+                </div>
+                <div class="recent-projects-grid">
+                    <!-- Project Card 1: Social Ad Pack -->
+                    <article class="project-showcase-card">
+                        <div class="project-card-media">
+                            <img src="assets/images/recent-reel-ad.jpg" alt="Social Ad Pack project preview">
+                            <span class="project-card-tag">Ad Campaign</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>Social Ad Pack</h3>
+                            <p>High-energy pacing, custom kinetic captions, and attention-grabbing product hooks engineered for social ads.</p>
+                            <a href="portfolio.html" class="project-card-link">View Details →</a>
+                        </div>
+                    </article>
+                    
+                    <!-- Project Card 2: YouTube Launch Edit -->
+                    <article class="project-showcase-card">
+                        <div class="project-card-media">
+                            <img src="assets/images/recent-youtube-edit.jpg" alt="YouTube Launch Edit project preview">
+                            <span class="project-card-tag">YouTube</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>YouTube Launch Edit</h3>
+                            <p>Polished long-form vocal edits, structural pacing, custom branded lower-thirds, and visual transitions.</p>
+                            <a href="portfolio.html" class="project-card-link">View Details →</a>
+                        </div>
+                    </article>
+                    
+                    <!-- Project Card 3: Explainer Motion -->
+                    <article class="project-showcase-card">
+                        <div class="project-card-media">
+                            <img src="assets/images/recent-motion-graphics.jpg" alt="Explainer Motion project preview">
+                            <span class="project-card-tag">Motion Graphics</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>Explainer Motion</h3>
+                            <p>High-fidelity animated UI walkthroughs, kinetic logo reveals, clean vector charts, and tracking callout flags.</p>
+                            <a href="portfolio.html" class="project-card-link">View Details →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section home2-edge-section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Case Studies & Performance</p>
+                        <h2>The FrameFusion Edge</h2>
+                        <p class="lead">A closer look at the metric-driven video outputs that scale channels and brands.</p>
+                    </div>
+                </div>
+                <div class="bento-grid-custom">
+                    <!-- Bento Card 1: Engagement (Hero) -->
+                    <div class="bento-card bento-item-hero" style="background-image: linear-gradient(135deg, rgba(15, 10, 40, 0.94) 0%, rgba(30, 12, 80, 0.72) 50%, rgba(5, 3, 20, 0.9) 100%), url('assets/images/home-hero-video-editor1.jpg'); background-size: cover; background-position: center; border-color: var(--brand-2);">
+                        <div class="bento-card-header">
+                            <span>High Impact</span>
+                        </div>
+                        <div class="bento-main-content">
+                            <h3>45% Higher Reel Engagement</h3>
+                            <p>By engineering high-energy first-3-second hooks, dynamic pacing, and kinetic caption styling, we boost completion rates and push algorithms to wider audiences.</p>
+                            <a class="btn btn-secondary btn-sm" href="case-studies.html" style="margin-top: 18px;">Read Case Study</a>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 2: Metrics 1 -->
+                    <div class="bento-card bento-item-metric">
+                        <div class="metric-circle">3x</div>
+                        <h3>Ad Variants</h3>
+                        <p>Built from a single master asset to optimize testing budgets.</p>
+                    </div>
+
+                    <!-- Bento Card 3: Metrics 2 -->
+                    <div class="bento-card bento-item-metric">
+                        <div class="metric-circle">98%</div>
+                        <h3>Client Retention</h3>
+                        <p>Creators and marketing agencies who partner with us for repeat work.</p>
+                    </div>
+
+                    <!-- Bento Card 4: Audio Wave Animation -->
+                    <div class="bento-card bento-item-sound" style="background-image: linear-gradient(180deg, rgba(15, 10, 40, 0.94) 0%, rgba(5, 3, 20, 0.9) 100%), url('assets/images/skill-sound-design.jpg'); background-size: cover; background-position: center; border-color: var(--brand-2);">
+                        <div class="bento-card-header">
+                            <span>Audio Branding</span>
+                        </div>
+                        <h3>Pro Sound Design</h3>
+                        <p>Deep auditory effects, riser builds, and background sweep cleanup included on every cut.</p>
+                        <div class="soundwave-visualizer" aria-label="Animated audio equalizer indicator">
+                            <div class="soundwave-bar"></div>
+                            <div class="soundwave-bar"></div>
+                            <div class="soundwave-bar"></div>
+                            <div class="soundwave-bar"></div>
+                            <div class="soundwave-bar"></div>
+                            <div class="soundwave-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 5: Aspect Ratio Tools -->
+                    <div class="bento-card bento-item-wide" style="background-image: linear-gradient(135deg, rgba(15, 10, 40, 0.94) 0%, rgba(20, 8, 60, 0.72) 50%, rgba(5, 3, 20, 0.9) 100%), url('assets/images/skills-editing-desk2.jpg'); background-size: cover; background-position: center; border-color: var(--accent);">
+                        <div class="bento-text">
+                            <div class="bento-card-header">
+                                <span>Multi-Format Exports</span>
+                            </div>
+                            <h3>7d Delivery Package</h3>
+                            <p>One master timeline is fully optimized and render-cropped for horizontal, square, and vertical feed layouts so you're ready to deploy instantly across all platforms.</p>
+                        </div>
+                        <div class="bento-crop-grid" aria-label="Visual aspect ratios crop representation grid">
+                            <div class="bento-crop-box ratio-portrait active">
+                                <span>9:16</span>
+                            </div>
+                            <div class="bento-crop-box ratio-square">
+                                <span>1:1</span>
+                            </div>
+                            <div class="bento-crop-box ratio-landscape">
+                                <span>16:9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 6: YouTube Growth / Analytics Summary -->
+                    <div class="bento-card bento-item-wide" style="background-image: linear-gradient(135deg, rgba(15, 10, 40, 0.95) 0%, rgba(30, 12, 80, 0.75) 50%, rgba(0, 0, 0, 0.9) 100%), url('assets/images/case-result-reel-metrics.jpg'); background-size: cover; background-position: center; border-color: var(--brand-2);">
+                        <div class="bento-text">
+                            <div class="bento-card-header">
+                                <span>Analytics</span>
+                            </div>
+                            <h3>10M+ Combined Views</h3>
+                            <p>Our edited content has reached millions across channels, driving strong organic traffic, high retention metrics, and brand authority.</p>
+                        </div>
+                        <div style="flex: 0.9; display: flex; align-items: center; justify-content: center; min-width: 120px;">
+                            <span class="btn btn-secondary btn-sm" style="pointer-events: none; border-color: var(--accent); color: var(--accent);">+120% ROI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head text-center">
+                    <div>
+                        <p class="eyebrow">Client Testimonials</p>
+                        <h2>Real feedback from real partners.</h2>
+                        <p>We build long-term relationships with creators, brands, and agencies by consistently exceeding narrative and pacing expectations.</p>
+                    </div>
+                </div>
+                <div class="testimonial-spotlight-grid">
+                    <!-- Creator Card -->
+                    <div class="testimonial-spotlight-card card-creator">
+                        <div class="testimonial-spotlight-content">
+                            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                            <p class="testimonial-spotlight-quote">"Amazing editing quality and super fast turnaround. They synchronized my narrative voice cuts seamlessly."</p>
+                            <div class="testimonial-client-info">
+                                <div class="testimonial-client-avatar">YT</div>
+                                <div class="testimonial-client-meta">
+                                    <h4>Creator Content</h4>
+                                    <span>Alex Rivera, Tech Reviewer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Brand Card -->
+                    <div class="testimonial-spotlight-card card-brand">
+                        <div class="testimonial-spotlight-content">
+                            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                            <p class="testimonial-spotlight-quote">"The visuals looked premium, polished, and perfectly campaign-ready. Our ad metrics rose by 45% instantly."</p>
+                            <div class="testimonial-client-info">
+                                <div class="testimonial-client-avatar">BD</div>
+                                <div class="testimonial-client-meta">
+                                    <h4>Brand Team</h4>
+                                    <span>Sarah Chen, Marketing Lead</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Agency Card -->
+                    <div class="testimonial-spotlight-card card-agency">
+                        <div class="testimonial-spotlight-content">
+                            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                            <p class="testimonial-spotlight-quote">"Extremely reliable, highly creative, and incredibly easy to brief. They are our go-to post production studio."</p>
+                            <div class="testimonial-client-info">
+                                <div class="testimonial-client-avatar">AG</div>
+                                <div class="testimonial-client-meta">
+                                    <h4>Agency Partner</h4>
+                                    <span>Marcus Vance, Creative Director</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Advanced Interactive Pricing Estimator Section -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head text-center">
+                    <div>
+                        <p class="eyebrow">Instant Quote Plan</p>
+                        <h2>Real-Time Cost Planner</h2>
+                        <p class="lead">Customize the project deliverables and see our real-time agency rate estimates instantly before you book.</p>
+                    </div>
+                </div>
+                <div class="advanced-estimate-card">
+                    <!-- Left: Sliders & Controls -->
+                    <div class="estimator-sliders-grid">
+                        <div class="estimator-slider-item">
+                            <div class="estimator-slider-header">
+                                <h4>Number of Video Deliverables</h4>
+                                <span class="estimator-val-badge" id="videoCountBadge">3 Videos</span>
+                            </div>
+                            <input class="estimator-range-input" id="videoCountSlider" type="range" min="1" max="15" value="3" aria-label="Deliverables Count">
+                        </div>
+                        
+                        <div class="estimator-slider-item">
+                            <div class="estimator-slider-header">
+                                <h4>Raw Footage Length per Video</h4>
+                                <span class="estimator-val-badge" id="footageLengthBadge">15 Minutes</span>
+                            </div>
+                            <input class="estimator-range-input" id="footageLengthSlider" type="range" min="5" max="60" step="5" value="15" aria-label="Raw footage length minutes">
+                        </div>
+                        
+                        <div class="estimator-slider-item">
+                            <div class="estimator-slider-header">
+                                <h4>Editing Rig Complexity</h4>
+                                <span class="estimator-val-badge" id="rigComplexityBadge">Standard Grade</span>
+                            </div>
+                            <input class="estimator-range-input" id="rigComplexitySlider" type="range" min="1" max="3" value="2" aria-label="Editing Rig Complexity Level">
+                        </div>
+                        
+                        <div class="estimator-addons-grid">
+                            <label class="estimator-checkbox-card">
+                                <input id="captionsAddon" type="checkbox" checked>
+                                <div class="estimator-checkbox-info">
+                                    <h5>Branded Captions</h5>
+                                    <p>Full kinetic typography & customized styling package</p>
+                                </div>
+                            </label>
+                            
+                            <label class="estimator-checkbox-card">
+                                <input id="thumbnailAddon" type="checkbox">
+                                <div class="estimator-checkbox-info">
+                                    <h5>YouTube Thumbnails</h5>
+                                    <p>High click-through-rate visual cover edits</p>
+                                </div>
+                            </label>
+                            
+                            <label class="estimator-checkbox-card">
+                                <input id="audioBrandingAddon" type="checkbox" checked>
+                                <div class="estimator-checkbox-info">
+                                    <h5>Cinematic SFX & Vocal EQ</h5>
+                                    <p>Custom vocal polish, risk builds, impact tracks</p>
+                                </div>
+                            </label>
+                            
+                            <label class="estimator-checkbox-card">
+                                <input id="rushAddon" type="checkbox">
+                                <div class="estimator-checkbox-info">
+                                    <h5>24h Rush Delivery</h5>
+                                    <p>Dedicated prioritised timeline queues for rapid launch</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Right: Summary Panel -->
+                    <div class="estimator-output-panel">
+                        <span class="estimator-output-label">Estimated Monthly Rate</span>
+                        <div class="estimator-price-value" id="customRateTotal">$580</div>
+                        <p class="estimator-summary-copy" id="estimatorSummaryLabel">3 videos, standard editing, branded subtitles, sound design package</p>
+                        <a class="btn btn-primary" href="contact.html">Secure Workspace Package</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container split">
+                <div>
+                    <p class="eyebrow">Agency depth</p>
+                    <h2>Built for campaigns, creators, and launch teams.</h2>
+                    <p class="lead">This alternate homepage now explains how FrameFusion supports repeat content work,
+                        not just one-off edits. Use it for a more studio-like presentation with delivery systems,
+                        campaign outputs, and conversion-focused visuals.</p>
+                    <div class="grid center-last">
+                        <article class="feature"><strong>01</strong>
+                            <h3>Campaign planning</h3>
+                            <p>Breaks one brief into launch films, short-form variants, motion title kits, and
+                                platform-ready exports.</p>
+                        </article>
+                        <article class="feature"><strong>02</strong>
+                            <h3>Visual identity</h3>
+                            <p>Keeps typography, captions, lower thirds, and color treatment consistent across every
+                                video touchpoint.</p>
+                        </article>
+                        <article class="feature"><strong>03</strong>
+                            <h3>Performance cuts</h3>
+                            <p>Creates multiple hooks, CTA endings, and thumbnail-friendly moments for testing across
+                                social channels.</p>
+                        </article>
+                        <article class="feature"><strong>04</strong>
+                            <h3>Platform Delivery</h3>
+                            <p>Packages timeline outputs into master drive archives, SRT subtitle files, and localized asset folders.</p>
+                        </article>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 24px; align-self: stretch; width: 100%;">
+                    <div class="hero-media" style="margin: 0; flex: 1; width: 100%; aspect-ratio: auto; min-height: 280px;"><img src="assets/images/home2-campaign-planning.jpg"
+                            alt="Campaign planning board for video edits"></div>
+                    
+                    <!-- Creative Campaign Performance Summary Panel -->
+                    <div class="agency-summary-stat-panel" style="padding: 32px 24px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface-2); display: flex; flex-direction: column; gap: 18px; box-shadow: var(--shadow); transition: all 0.3s ease;">
+                        <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 8px; color: var(--brand-2);">
+                            Creative Campaign Performance
+                        </h4>
+                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0;">Our studio delivers complete multi-platform assets scaled from your core master files, designed for maximum audience watch-time and platform retention loops.</p>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 4px;">
+                            <div style="text-align: center; padding: 14px 10px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line);">
+                                <strong style="display: block; font-size: 1.4rem; color: var(--brand); font-weight: 900;">+35%</strong>
+                                <span style="font-size: 0.72rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em;">Retention</span>
+                            </div>
+                            <div style="text-align: center; padding: 14px 10px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line);">
+                                <strong style="display: block; font-size: 1.4rem; color: var(--brand-2); font-weight: 900;">2.4M</strong>
+                                <span style="font-size: 0.72rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em;">Imp. Gain</span>
+                            </div>
+                            <div style="text-align: center; padding: 14px 10px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line);">
+                                <strong style="display: block; font-size: 1.4rem; color: var(--accent); font-weight: 900;">100%</strong>
+                                <span style="font-size: 0.72rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em;">Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Deliverables Card with Background Image -->
+                    <div class="agency-summary-deliverables-card" style="padding: 32px 24px; min-height: 220px; border-radius: var(--radius); border: 1px solid var(--line); background-image: linear-gradient(135deg, rgba(15, 10, 40, 0.9) 0%, rgba(30, 12, 80, 0.75) 50%, rgba(0, 0, 0, 0.85) 100%), url('assets/images/skills-editing-desk2.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow); transition: all 0.3s ease; justify-content: center;">
+                        <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: #ffffff; display: flex; align-items: center; gap: 8px;">
+                            Studio Delivery Standard
+                        </h4>
+                        <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.85); line-height: 1.5; margin: 0;">Every campaign timeline receives dedicated editing sweeps, localized subtitles, secondary graphic overlays, and platform-optimized color grading tailored specifically for your brand identity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section alt ppr-section">
+            <!-- Background Video -->
+            <div class="ppr-bg-video-wrap">
+                <video autoplay muted loop playsinline class="ppr-bg-video">
+                    <source src="assets/videos/motion_grphics.mp4" type="video/mp4">
+                    <source src="assets/videos/motion.mp4" type="video/mp4">
+                </video>
+                <div class="ppr-bg-overlay"></div>
+            </div>
+            <div class="container">
+
+                <!-- Section Header -->
+                <div class="section-head text-center" style="margin-bottom: 56px;">
+                    <div>
+                        <p class="eyebrow">Our Workflow</p>
+                        <h2>Precision Production Route</h2>
+                        <p class="lead">How we shape raw footage into polished, brand-aligned visual assets.</p>
+                    </div>
+                </div>
+
+                <!-- 3-Step Cards with connector line -->
+                <div class="ppr-steps-grid">
+
+                    <!-- Step 1 -->
+                    <article class="ppr-step-card">
+                        <div class="ppr-step-num-wrap">
+                            <span class="ppr-step-num">01</span>
+                            <div class="ppr-connector"></div>
+                        </div>
+                        <div class="ppr-step-tag">Milestone 1</div>
+                        <h3>Creative Briefing &amp; Outline</h3>
+                        <p>Before firing up our editing suites, we align on target audience, platform hooks, references, and branding assets to structure a clear narrative outline.</p>
+                        <div class="ppr-step-media">
+                            <img src="assets/images/home2-route-brief.jpg" alt="Creative brief outline asset workspace">
+                        </div>
+                        <ul class="ppr-details">
+                            <li>Narrative Storyboard</li>
+                            <li>Style References</li>
+                            <li>Asset Handoff</li>
+                            <li>Deadline Alignment</li>
+                        </ul>
+                    </article>
+
+                    <!-- Step 2 -->
+                    <article class="ppr-step-card ppr-step-card--mid">
+                        <div class="ppr-step-num-wrap">
+                            <span class="ppr-step-num">02</span>
+                            <div class="ppr-connector"></div>
+                        </div>
+                        <div class="ppr-step-tag">Milestone 2</div>
+                        <h3>Timeline Assembly &amp; Polish</h3>
+                        <p>Here, the heavy lifting occurs. We execute story pacing, color balancing, auditory cleanup, lower-thirds integrations, and kinetic animations to keep viewer retention at its peak.</p>
+                        <div class="ppr-step-media">
+                            <img src="assets/images/home2-route-edit.jpg" alt="Video editor timeline workbench detail">
+                        </div>
+                        <ul class="ppr-details">
+                            <li>Retention Pacing</li>
+                            <li>Vocal Equalization</li>
+                            <li>Color Grading</li>
+                            <li>Motion Callouts</li>
+                        </ul>
+                    </article>
+
+                    <!-- Step 3 -->
+                    <article class="ppr-step-card">
+                        <div class="ppr-step-num-wrap">
+                            <span class="ppr-step-num">03</span>
+                            <div class="ppr-connector ppr-connector--last"></div>
+                        </div>
+                        <div class="ppr-step-tag">Milestone 3</div>
+                        <h3>Platform Export Render</h3>
+                        <p>Your polished visual assets are rendered in multiple aspect ratios, compressed using industry-standard codecs, and packaged with source subtitles for seamless launch.</p>
+                        <div class="ppr-step-media">
+                            <img src="assets/images/home2-route-delivery1.jpg" alt="Final project files delivery archive folders">
+                        </div>
+                        <ul class="ppr-details">
+                            <li>YouTube 4K Masters</li>
+                            <li>Reel/Shorts Portrait</li>
+                            <li>SRT Subtitle Files</li>
+                            <li>Asset Archival Link</li>
+                        </ul>
+                    </article>
+
+                </div><!-- /.ppr-steps-grid -->
+
+                <!-- Bottom guarantee strip -->
+                <div class="ppr-guarantee-strip">
+                    <div class="ppr-guarantee-img">
+                        <img src="assets/images/workflow-review-board_new.jpg" alt="Review board visual">
+                    </div>
+                    <div class="ppr-guarantee-text">
+                        <strong>Production Guarantee</strong>
+                        <p>Every milestone is tracked transparently inside our client portal, with real-time feedback loops and guaranteed 48-hour revision turns.</p>
+                    </div>
+                    <div class="ppr-guarantee-stats">
+                        <div class="ppr-stat"><strong>48h</strong><span>Revision Turn</span></div>
+                        <div class="ppr-stat"><strong>3</strong><span>Milestones</span></div>
+                        <div class="ppr-stat"><strong>100%</strong><span>Transparency</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Accordion FAQ Section -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head text-center">
+                    <div>
+                        <p class="eyebrow">FAQs</p>
+                        <h2>Common Project Inquiries</h2>
+                        <p class="lead">Get immediate answers on files handoff systems, delivery formats, and revisions rounds.</p>
+                    </div>
+                </div>
+                <div class="accordion-faq-grid">
+                    <div class="accordion-faq-card">
+                        <button class="accordion-faq-header" type="button" aria-expanded="false">
+                            <h3>How do we send our raw files?</h3>
+                            <div class="accordion-faq-trigger">+</div>
+                        </button>
+                        <div class="accordion-faq-body">
+                            <div class="accordion-faq-content">
+                                You can upload raw videos via Google Drive, Dropbox, or Frame.io. We also provide secure upload links to our private high-speed storage workspace.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-faq-card">
+                        <button class="accordion-faq-header" type="button" aria-expanded="false">
+                            <h3>What is the typical delivery turnaround?</h3>
+                            <div class="accordion-faq-trigger">+</div>
+                        </button>
+                        <div class="accordion-faq-body">
+                            <div class="accordion-faq-content">
+                                Standard edits take between 3 to 5 business days depending on complexity. If you select our "24h Rush Delivery" upgrade, we prioritize your project in our editing suites.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-faq-card">
+                        <button class="accordion-faq-header" type="button" aria-expanded="false">
+                            <h3>How do revision rounds work?</h3>
+                            <div class="accordion-faq-trigger">+</div>
+                        </button>
+                        <div class="accordion-faq-body">
+                            <div class="accordion-faq-content">
+                                We utilize Frame.io or timestamped sheets for precise feedback. All packages include at least 3 correction rounds, during which you can outline changes to text, pacing, or transitions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container"><a class="logo brand-lockup footer-brand" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a>
+            <div class="footer-grid">
+                <div>
+                    <h3>FrameFusion Studio</h3>
+                    <p>Freelance video editing, motion graphics, reels, ads, YouTube content, and brand visuals.</p>
+                    <div class="socials"><a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram-logo.svg" alt="Instagram"></a><a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="assets/icons/linkedin-logo.svg" alt="LinkedIn"></a><a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube-logo.svg" alt="YouTube"></a><a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook-logo.svg" alt="Facebook"></a></div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3><a href="index.html">Home</a><br><a href="services.html">Services</a><br><a
+                        href="portfolio.html">Portfolio</a><br><a href="pricing.html">Pricing</a>
+                </div>
+                <div>
+                    <h3>Availability</h3>
+                    <p>Mon-Fri: 9:00-18:00<br>Sat: 10:00-15:00<br>Fast delivery by request</p>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>hello@framefusion.studio<br>+91 98765 43210</p><a href="contact.html">Send project inquiry</a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 FrameFusion Studio. Video editing and motion graphics portfolio.</div>
+        </div>
+    </footer>
+
+    <!-- Showreel Video Modal -->
+    <div class="showreel-modal" id="showreelModal">
+        <div class="modal-content-wrapper">
+            <button class="modal-close-trigger" id="closeShowreelBtn" aria-label="Close video player modal">&times;</button>
+            <div class="modal-video-slot">
+                <video class="video-slot" id="modalVideo" controls>
+                    <source src="assets/videos/showreel_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js?v=50"></script>
+</body>
+</html>
+
