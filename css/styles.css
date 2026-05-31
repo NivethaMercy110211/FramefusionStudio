@@ -86,7 +86,8 @@ a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 .container { width: min(var(--container), calc(100% - 40px)); margin: 0 auto; }
 
-.site-header { position: sticky; top: 0; z-index: 80; background: color-mix(in srgb, var(--surface) 92%, transparent); border-bottom: 1px solid var(--line); box-shadow: 0 10px 30px rgba(109, 40, 217, .10); backdrop-filter: blur(14px); }
+.site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 80; background: color-mix(in srgb, var(--surface) 92%, transparent); border-bottom: 1px solid var(--line); box-shadow: 0 10px 30px rgba(109, 40, 217, .10); backdrop-filter: blur(14px); }
+body:not(.auth-body) { padding-top: 59px; }
 .nav { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
 .logo { display: inline-flex; align-items: center; flex: 0 0 auto; }
 .brand-logo-img,
@@ -418,11 +419,9 @@ html[dir="rtl"] .mobile-home a {
   color: rgba(255, 255, 255, 0.82);
 }
 
-/* Portfolio page hero — editorial dark board */
+/* Portfolio page hero — motion video background */
 .portfolio-hero {
-  background-image:
-    linear-gradient(160deg, rgba(5, 3, 20, 0.62) 0%, rgba(20, 8, 60, 0.42) 55%, rgba(5, 3, 20, 0.58) 100%),
-    url("../assets/images/portfolio-editorial-board.jpg");
+  background: linear-gradient(160deg, rgba(5, 3, 20, 0.68) 0%, rgba(20, 8, 60, 0.45) 55%, rgba(5, 3, 20, 0.62) 100%);
   text-align: center;
 }
 .portfolio-hero h1,
@@ -444,6 +443,7 @@ html[dir="rtl"] .mobile-home a {
 
 /* Contact page hero — brief preparation image */
 .contact-hero {
+  text-align: center;
   background-image:
     linear-gradient(160deg, rgba(5, 3, 20, 0.65) 0%, rgba(15, 5, 55, 0.40) 55%, rgba(5, 3, 20, 0.60) 100%),
     url("../assets/images/contact-brief-prep.jpg");
@@ -458,9 +458,23 @@ html[dir="rtl"] .mobile-home a {
     radial-gradient(ellipse at 85% 25%, rgba(217, 70, 239, 0.22), transparent 42%),
     radial-gradient(ellipse at 55% 85%, rgba(6, 182, 212, 0.14), transparent 36%);
 }
+.contact-hero h1,
+.contact-hero .eyebrow,
+.contact-hero .lead {
+  text-align: center;
+  margin-inline: auto;
+}
+.contact-hero h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.50) !important;
+}
+.contact-hero .lead {
+  color: rgba(255, 255, 255, 0.82) !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.50) !important;
+}
 .contact-hero .eyebrow {
-  color: var(--accent);
-  text-shadow: 0 0 12px rgba(6, 182, 212, 0.50);
+  color: var(--accent) !important;
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.50) !important;
 }
 
 /* About page hero — motion video background */
@@ -536,7 +550,7 @@ html[dir="rtl"] .mobile-home a {
   text-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
 }
 .split { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: clamp(28px, 4vw, 48px); align-items: center; }
-.hero-media { position: relative; aspect-ratio: 16 / 10; min-height: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2); box-shadow: var(--shadow); }
+.hero-media { position: relative; aspect-ratio: 16 / 10; min-height: 0; overflow: hidden; border: 1px solid color-mix(in srgb, var(--brand) 28%, var(--line)); border-radius: 36px; background: var(--surface-2); box-shadow: 0 20px 48px rgba(109, 40, 217, 0.12), var(--shadow); }
 .hero-media::after {
   content: "";
   position: absolute;
@@ -753,10 +767,68 @@ body.auth-body {
   text-align: center;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
-.auth-card { width: min(100%, 480px); margin: 0 auto; }
+.auth-page .hero-bg-video-wrapper {
+  z-index: 1;
+}
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 480px);
+  margin: 0 auto;
+}
 .auth-card h1 { line-height: 1.05; }
 .auth-card .muted { max-width: 34rem; margin-inline: auto; }
+
+/* Light Mode Custom Premium Styling for Auth Card */
+body:not(.dark) .auth-card {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  border-color: rgba(91, 33, 182, 0.25) !important;
+  box-shadow: 0 20px 50px rgba(91, 33, 182, 0.15) !important;
+  color: #0d0b1e !important;
+}
+body:not(.dark) .auth-card h1 {
+  color: #5b21b6 !important;
+  text-shadow: none !important;
+}
+body:not(.dark) .auth-card label {
+  color: #0d0b1e !important;
+  font-weight: 800;
+}
+body:not(.dark) .auth-card .muted,
+body:not(.dark) .auth-card .muted a {
+  color: #5c5880 !important;
+}
+body:not(.dark) .auth-card .muted a:hover {
+  color: #d946ef !important;
+}
+body:not(.dark) .auth-card input {
+  background: #ffffff !important;
+  color: #0d0b1e !important;
+  border: 1px solid rgba(91, 33, 182, 0.28) !important;
+}
+body:not(.dark) .auth-card input:focus {
+  border-color: #5b21b6 !important;
+  outline: 3px solid rgba(91, 33, 182, 0.15) !important;
+}
+body:not(.dark) .auth-card .check {
+  color: #5c5880 !important;
+}
+body:not(.dark) .auth-logo.brand-lockup span {
+  color: #0d0b1e !important;
+}
+body:not(.dark) .auth-card .btn-secondary {
+  background: #ffffff !important;
+  border-color: rgba(91, 33, 182, 0.25) !important;
+  color: #0d0b1e !important;
+}
+body:not(.dark) .auth-card .btn-secondary:hover {
+  border-color: #d946ef !important;
+  color: #d946ef !important;
+  background: rgba(217, 70, 239, 0.08) !important;
+}
 .auth-logo.brand-lockup {
   justify-content: center;
   margin: 0 auto 20px;
