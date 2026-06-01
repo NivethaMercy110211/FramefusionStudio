@@ -1944,7 +1944,7 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   overflow: hidden;
   border-right: 2px solid #fff;
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
-  z-index: 10;
+  z-index: 22;
 }
 .slider-img-overlay .slider-img {
   width: var(--slider-width, 960px); /* Managed dynamically via ResizeObserver */
@@ -1972,7 +1972,7 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .slider-badge.badge-after {
-  right: 14px;
+  left: 14px;
   background: linear-gradient(135deg, rgba(124, 43, 220, 0.8), rgba(214, 31, 207, 0.8));
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -1980,7 +1980,7 @@ body:not(.dark) .auth-card .btn-secondary:hover {
 }
 .slider-img-overlay.is-too-narrow .badge-after {
   opacity: 0;
-  transform: translateX(8px);
+  transform: translateX(-8px);
 }
 .slider-range {
   position: absolute;
