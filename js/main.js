@@ -187,9 +187,17 @@
   const sliderHandle = document.getElementById("sliderHandle");
   
   if (sliderRange && sliderOverlay && sliderHandle && sliderContainer) {
+    const sliderAfterBadge = sliderOverlay.querySelector(".badge-after");
+
     const updateSlider = (value) => {
-      sliderOverlay.style.width = `${value}%`;
-      sliderHandle.style.left = `${value}%`;
+      const sliderValue = Number(value);
+      const containerWidth = sliderContainer.getBoundingClientRect().width;
+      const overlayWidth = containerWidth * (sliderValue / 100);
+      const badgeMinWidth = sliderAfterBadge ? sliderAfterBadge.offsetWidth + 32 : 0;
+
+      sliderOverlay.style.width = `${sliderValue}%`;
+      sliderHandle.style.left = `${sliderValue}%`;
+      sliderOverlay.classList.toggle("is-too-narrow", overlayWidth < badgeMinWidth);
     };
     sliderRange.addEventListener("input", (e) => updateSlider(e.target.value));
     sliderRange.addEventListener("change", (e) => updateSlider(e.target.value));
@@ -198,6 +206,7 @@
     const updateOverlayWidth = () => {
       const containerWidth = sliderContainer.getBoundingClientRect().width;
       sliderContainer.style.setProperty('--slider-width', `${containerWidth}px`);
+      updateSlider(sliderRange.value);
     };
     
     if (window.ResizeObserver) {
@@ -207,6 +216,7 @@
       window.addEventListener("resize", updateOverlayWidth);
       updateOverlayWidth();
     }
+    updateSlider(sliderRange.value);
   }
 
   // 2. Bento Grid Interactive Aspect Ratio Boxes
@@ -937,4 +947,3 @@
       if (e.key === 'Enter') submitNote();
     });
   })();
-
