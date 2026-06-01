@@ -9,11 +9,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=50">
+    <link rel="stylesheet" href="css/styles.css?v=56">
 </head>
 
 <body>
-    <header class="site-header"><nav class="nav container"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><div class="desktop-nav"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm desktop-only active" href="login.html">Login</a><button class="icon-btn icon-btn-theme desktop-only" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button><button class="icon-btn icon-btn-dir" data-dir-toggle type="button" aria-label="Switch to right-to-left">RTL</button><button class="icon-btn hamburger" data-menu-open type="button" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav></header><div class="mobile-overlay" data-menu-close></div><aside class="mobile-panel"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><nav><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a class="active" href="login.html">Login</a></nav><div class="mobile-tools"><button class="icon-btn icon-btn-theme" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button></div></aside>
+    <header class="site-header"><nav class="nav container"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><div class="desktop-nav"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm desktop-only active" href="login.html">Login</a><button class="icon-btn icon-btn-theme desktop-only" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button><button class="icon-btn icon-btn-dir desktop-only" data-dir-toggle type="button" aria-label="Switch to right-to-left"><img class="ui-icon dir-icon" src="assets/icons/icon-rtl.svg" alt="" width="20" height="20"></button><button class="icon-btn hamburger" data-menu-open type="button" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav></header><div class="mobile-overlay" data-menu-close></div><aside class="mobile-panel"><a class="logo brand-lockup" href="index.html"><img class="brand-logo-img" src="assets/images/framefusion-logo.png?v=2" alt="FrameFusion Studio logo"><span><strong>FrameFusion</strong><small>Studio</small></span></a><nav><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="showreel.html">Showreel</a><a href="testimonials.html">Testimonials</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a class="btn btn-primary" href="login.html">Login</a></nav><div class="mobile-tools"><button class="icon-btn icon-btn-theme" data-theme-toggle type="button" aria-label="Switch to dark mode"><img class="ui-icon theme-icon" src="assets/icons/icon-moon.svg" alt="" width="20" height="20"></button><button class="icon-btn icon-btn-dir" data-dir-toggle type="button" aria-label="Switch to right-to-left"><img class="ui-icon dir-icon" src="assets/icons/icon-rtl.svg" alt="" width="20" height="20"></button></div></aside>
     <main>
         <section class="hero agency-hero">
             <div class="container split">
@@ -76,6 +76,7 @@
                 <div class="colorist-deck-card">
                     <!-- Left: live grading viewport + scopes -->
                     <div class="colorist-viewport-panel">
+                        <h3>Live Grading Monitor</h3>
                         <div class="colorist-monitor-frame">
                             <video id="coloristVideo" autoplay muted loop playsinline preload="metadata" class="color-graded-log">
                                 <source src="assets/videos/cinimatic_travel_edit1.mp4" type="video/mp4">
@@ -84,19 +85,20 @@
                             <span class="colorist-badge" id="activeLutLabel">LOG RAW FEED (0% GRADING)</span>
                         </div>
                         
-                        <!-- Real-time color scopes (digital waveform simulation) -->
-                        <div class="colorist-scopes-wrap">
-                            <span class="scope-label">WAVEFORM / CHANNELS</span>
-                            <div class="colorist-scopes-grid" id="scopesGrid">
-                                <div class="scope-bar bar-red" style="height: 30%"></div>
-                                <div class="scope-bar bar-green" style="height: 25%"></div>
-                                <div class="scope-bar bar-blue" style="height: 35%"></div>
-                                <div class="scope-bar bar-red" style="height: 40%"></div>
-                                <div class="scope-bar bar-green" style="height: 38%"></div>
-                                <div class="scope-bar bar-blue" style="height: 42%"></div>
-                                <div class="scope-bar bar-red" style="height: 32%"></div>
-                                <div class="scope-bar bar-green" style="height: 28%"></div>
-                                <div class="scope-bar bar-blue" style="height: 36%"></div>
+                        <!-- Secondary: interactive offset color wheel -->
+                        <div class="color-wheel-section">
+                            <h4>Shadows / Highlights Offset</h4>
+                            <div class="wheel-flex-container">
+                                <div class="interactive-color-wheel" id="colorWheelDeck">
+                                    <div class="wheel-gradient-disc"></div>
+                                    <div class="wheel-crosshair" id="wheelCrosshair" style="top: 50%; left: 50%;"></div>
+                                </div>
+                                <div class="wheel-data-readout">
+                                    <div class="readout-item"><span>RED OFFSET:</span> <strong id="redVal">0.0</strong></div>
+                                    <div class="readout-item"><span>GREEN OFFSET:</span> <strong id="greenVal">0.0</strong></div>
+                                    <div class="readout-item"><span>BLUE OFFSET:</span> <strong id="blueVal">0.0</strong></div>
+                                    <button class="btn btn-secondary btn-sm reset-wheel-btn" id="resetWheelBtn" type="button">Reset Offset</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -142,20 +144,19 @@
                             </button>
                         </div>
 
-                        <!-- Secondary: interactive offset color wheel -->
-                        <div class="color-wheel-section">
-                            <h4>Shadows / Highlights Offset</h4>
-                            <div class="wheel-flex-container">
-                                <div class="interactive-color-wheel" id="colorWheelDeck">
-                                    <div class="wheel-gradient-disc"></div>
-                                    <div class="wheel-crosshair" id="wheelCrosshair" style="top: 50%; left: 50%;"></div>
-                                </div>
-                                <div class="wheel-data-readout">
-                                    <div class="readout-item"><span>RED OFFSET:</span> <strong id="redVal">0.0</strong></div>
-                                    <div class="readout-item"><span>GREEN OFFSET:</span> <strong id="greenVal">0.0</strong></div>
-                                    <div class="readout-item"><span>BLUE OFFSET:</span> <strong id="blueVal">0.0</strong></div>
-                                    <button class="btn btn-secondary btn-sm reset-wheel-btn" id="resetWheelBtn" type="button">Reset Offset</button>
-                                </div>
+                        <!-- Real-time color scopes (digital waveform simulation) -->
+                        <div class="colorist-scopes-wrap">
+                            <span class="scope-label">WAVEFORM / CHANNELS</span>
+                            <div class="colorist-scopes-grid" id="scopesGrid">
+                                <div class="scope-bar bar-red" style="height: 30%"></div>
+                                <div class="scope-bar bar-green" style="height: 25%"></div>
+                                <div class="scope-bar bar-blue" style="height: 35%"></div>
+                                <div class="scope-bar bar-red" style="height: 40%"></div>
+                                <div class="scope-bar bar-green" style="height: 38%"></div>
+                                <div class="scope-bar bar-blue" style="height: 42%"></div>
+                                <div class="scope-bar bar-red" style="height: 32%"></div>
+                                <div class="scope-bar bar-green" style="height: 28%"></div>
+                                <div class="scope-bar bar-blue" style="height: 36%"></div>
                             </div>
                         </div>
                     </div>
@@ -782,11 +783,21 @@
                 </div>
                 <div>
                     <h3>Availability</h3>
-                    <p>Mon-Fri: 9:00-18:00<br>Sat: 10:00-15:00<br>Fast delivery by request</p>
+                    <p>
+                        <svg class="footer-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Mon-Fri: 9:00-18:00<br>
+                        <svg class="footer-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Sat: 10:00-15:00<br>
+                        <svg class="footer-icon" viewBox="0 0 24 24" style="stroke-width:2.5;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Fast delivery by request
+                    </p>
                 </div>
                 <div>
                     <h3>Contact</h3>
-                    <p>hello@framefusion.studio<br>+91 98765 43210</p><a href="contact.html">Send project inquiry</a>
+                    <p>
+                        <svg class="footer-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>hello@framefusion.studio<br>
+                        <svg class="footer-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+91 98765 43210<br>
+                        <a href="contact.html">
+                            <svg class="footer-icon footer-link-icon" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>Send project inquiry
+                        </a>
+                    </p>
                 </div>
             </div>
             <div class="copyright">&copy; 2026 FrameFusion Studio. Video editing and motion graphics portfolio.</div>
@@ -809,4 +820,3 @@
     <script src="js/main.js?v=50"></script>
 </body>
 </html>
-
