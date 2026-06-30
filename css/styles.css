@@ -39,8 +39,8 @@ body.dark {
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
-body { margin: 0; width: 100%; overflow-x: hidden; font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif; color: var(--text); background: var(--bg); line-height: 1.65; text-rendering: optimizeLegibility; }
+html { scroll-behavior: smooth; width: 100%; overflow-x: clip; }
+body { margin: 0; width: 100%; overflow-x: clip; font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif; color: var(--text); background: var(--bg); line-height: 1.65; text-rendering: optimizeLegibility; }
 body::before {
   content: "";
   position: fixed;
@@ -54,6 +54,7 @@ body::before {
     radial-gradient(ellipse at 20% 90%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 30%),
     var(--bg);
 }
+
 body::after {
   content: "";
   position: fixed;
@@ -67,6 +68,7 @@ body::after {
   mask-image: linear-gradient(180deg, rgba(0,0,0,.5), transparent 55%);
   opacity: .14;
 }
+
 body.no-scroll { overflow: hidden; }
 body.rtl { direction: rtl; }
 img, video { display: block; width: 100%; height: auto; }
@@ -82,6 +84,7 @@ video[autoplay]::-webkit-media-controls-overlay-play-button {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 .container { width: min(var(--container), calc(100% - 40px)); margin: 0 auto; }
@@ -203,6 +206,7 @@ body.suppress-nav-popups .nav-dropdown:hover .nav-dropdown-menu {
 .icon-btn:hover, .icon-btn:focus { transform: translateY(-2px); border-color: var(--brand); background: var(--surface); outline: none; }
 .icon-btn-theme { width: 44px; padding: 0; }
 .nav-actions .icon-btn-theme { width: 34px; }
+.icon-btn-dir { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.03em; font-family: inherit; }
 .nav-actions .icon-btn.icon-btn-dir { padding: 0; display: inline-grid; place-items: center; }
 .ui-icon { width: 20px; height: 20px; display: block; object-fit: contain; }
 .icon-btn-dir .ui-icon { width: 22px; height: 22px; }
@@ -1506,7 +1510,7 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   left: 0;
   width: 100%;
   height: 6px;
-  background: var(--card-color, var(--brand));
+  background: #d946ef;
 }
 .ribbon-card:hover {
   transform: translateY(-4px);
@@ -4111,7 +4115,7 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--card-accent, var(--brand));
+  background: #d946ef;
   transition: height 0.2s ease;
 }
 .segment-card:hover {
@@ -4119,9 +4123,17 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   border-color: var(--card-accent, var(--brand));
   box-shadow: var(--shadow);
 }
-.segment-card-creator { --card-accent: var(--brand-2); }
+.segment-card-creator { --card-accent: #d946ef; }
 .segment-card-agency { --card-accent: var(--brand); }
 .segment-card-brand { --card-accent: var(--teal); }
+
+.segment-grid .segment-card {
+  border-color: #d946ef;
+}
+
+.segment-grid .segment-card:hover {
+  border-color: #d946ef;
+}
 
 .segment-icon-wrap {
   width: 48px;
@@ -4167,6 +4179,10 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   content: "✓";
   color: var(--card-accent);
   font-weight: 800;
+}
+
+.segment-grid .segment-bullet-list li::before {
+  color: #d946ef;
 }
 
 /* 3. Interactive Workflow Phase Tabs */
@@ -10129,20 +10145,6 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
-/* Slider frame highlights for innovative feel */
-.home-polish-highlight #beforeAfterSlider {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    0 15px 45px rgba(0, 0, 0, 0.4),
-    0 30px 70px rgba(91, 33, 182, 0.22);
-}
-
-/* ==========================================================================
-   HOME 2 — DAVINCI COLORIST WORKSPACE DECK
-   ========================================================================== */
-.home2-colorist-section {
-  background: var(--bg);
-}
 
 .colorist-deck-card {
   display: grid;
@@ -10204,111 +10206,6 @@ body:not(.dark) .auth-card .btn-secondary:hover {
 .colorist-monitor-overlay {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%);
-  z-index: 2;
-}
-.colorist-viewport-panel .colorist-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 10;
-  background: rgba(17, 24, 39, 0.75);
-  color: var(--accent);
-  border: 1px solid rgba(6, 182, 212, 0.35);
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-shadow: 0 0 6px rgba(6, 182, 212, 0.4);
-}
-
-/* Waveform Scopes animation */
-.colorist-scopes-wrap {
-  background: var(--surface-2);
-  border: 1px dashed var(--line);
-  border-radius: 8px;
-  padding: 14px 18px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.scope-label {
-  display: block;
-  font-size: 0.68rem;
-  font-weight: 800;
-  color: var(--muted);
-  opacity: 0.8;
-  letter-spacing: 0.1em;
-  margin-bottom: 12px;
-}
-.colorist-scopes-grid {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  height: 52px;
-  gap: 3px;
-}
-.scope-bar {
-  flex: 1;
-  border-radius: 99px 99px 0 0;
-  background: rgba(255, 255, 255, 0.2);
-  transition: height 0.3s ease, background 0.3s ease;
-}
-.bar-red { background: rgba(239, 68, 68, 0.45); }
-.bar-green { background: rgba(34, 197, 94, 0.45); }
-.bar-blue { background: rgba(59, 130, 246, 0.45); }
-
-/* --- Right: Controls --- */
-.colorist-controls-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  height: 100%;
-}
-.colorist-viewport-panel h3,
-.colorist-controls-panel h3 {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--text);
-  margin: 0;
-}
-.lut-selectors-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-@media (min-width: 901px) {
-  .lut-selectors-grid {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    gap: 8px;
-  }
-}
-.lut-btn {
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 12px 16px;
-  color: var(--text);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-align: start;
-  width: 100%;
-  transition: all 0.22s ease;
-}
-@media (min-width: 901px) {
-  .lut-btn {
-    flex: 1;
-    min-height: 0;
-    padding: 4px 16px;
-  }
-}
 .lut-btn:hover {
   background: color-mix(in srgb, var(--brand) 8%, var(--surface-2));
   border-color: color-mix(in srgb, var(--brand) 30%, var(--line));
@@ -10382,71 +10279,8 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   background: #000;
 }
 .wheel-gradient-disc {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, #fff 10%, transparent 80%), 
-              conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
-  opacity: 0.85;
-}
-.wheel-crosshair {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  background: rgba(0,0,0,0.3);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  box-shadow: 0 0 6px #000;
-  z-index: 5;
-}
-.wheel-data-readout {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1;
-}
-.readout-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: var(--muted);
-  background: var(--surface-2);
-  padding: 6px 10px;
-  border-radius: 4px;
   border: 1px solid var(--line);
 }
-.readout-item strong {
-  color: var(--accent);
-  font-family: monospace;
-}
-.reset-wheel-btn {
-  margin-top: 4px;
-  min-height: 32px !important;
-  font-size: 0.74rem !important;
-  font-weight: 800 !important;
-  border-color: var(--line) !important;
-  background: var(--surface) !important;
-  color: var(--text) !important;
-}
-.reset-wheel-btn:hover {
-  background: var(--surface-2) !important;
-  border-color: var(--brand) !important;
-  color: var(--brand) !important;
-}
-
-/* Responsive adjust */
-@media (max-width: 900px) {
-  .colorist-deck-card {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-@media (max-width: 500px) {
-  .wheel-flex-container {
-    flex-direction: column;
-    align-items: center;
     gap: 16px;
   }
   .wheel-data-readout {
@@ -10461,8 +10295,9 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  color: #ffffff;
   background-image: 
-    linear-gradient(160deg, rgba(5, 3, 20, 0.95) 0%, rgba(15, 5, 45, 0.88) 60%, rgba(5, 3, 20, 0.95) 100%),
+    linear-gradient(160deg, rgba(5, 3, 20, 0.98) 0%, rgba(15, 5, 45, 0.94) 60%, rgba(5, 3, 20, 0.98) 100%),
     url("../assets/images/background_image9_bg.jpg");
   background-size: cover;
   background-position: center;
@@ -10470,13 +10305,14 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   border-bottom: 1px solid var(--line);
 }
 .home2-edge-section h2,
+.home2-edge-section .section-head p,
 .home2-edge-section .lead {
   color: #ffffff;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
 }
 .home2-edge-section .eyebrow {
-  color: var(--brand-2) !important;
-  text-shadow: 0 0 10px rgba(217, 70, 239, 0.4);
+  color: #f5d0fe !important;
+  text-shadow: 0 0 12px rgba(217, 70, 239, 0.62);
 }
 .home2-edge-section .bento-card {
   color: #ffffff;
@@ -10488,8 +10324,8 @@ body:not(.dark) .auth-card .btn-secondary:hover {
   color: rgba(255, 255, 255, 0.8);
 }
 .home2-edge-section .bento-item-metric {
-  background: radial-gradient(circle at 0% 100%, rgba(6, 182, 212, 0.15), transparent 42%), rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: radial-gradient(circle at 0% 100%, rgba(6, 182, 212, 0.2), transparent 42%), rgba(10, 7, 31, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
   backdrop-filter: blur(8px);
 }
 .home2-edge-section .bento-item-metric:hover {
@@ -10497,8 +10333,14 @@ body:not(.dark) .auth-card .btn-secondary:hover {
 }
 .home2-edge-section .bento-item-metric .metric-circle {
   border-color: rgba(255, 255, 255, 0.15) !important;
-  border-top-color: var(--brand-2) !important;
-  color: var(--brand-2) !important;
+  border-top-color: #f5d0fe !important;
+  color: #ffffff !important;
+}
+.home2-edge-section .bento-item-metric h3 {
+  color: #ffffff !important;
+}
+.home2-edge-section .bento-item-metric p {
+  color: rgba(255, 255, 255, 0.86) !important;
 }
 .home2-edge-section .bento-crop-grid {
   direction: ltr;

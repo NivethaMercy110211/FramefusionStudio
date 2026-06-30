@@ -43,11 +43,8 @@
       button.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
     });
     document.querySelectorAll("[data-dir-toggle]").forEach((button) => {
-      const icon = button.querySelector("img.dir-icon");
-      if (icon) {
-        icon.src = isRtl ? "assets/icons/icon-ltr.svg" : "assets/icons/icon-rtl.svg";
-      }
-      button.setAttribute("aria-label", isRtl ? "Current direction is right-to-left. Switch to left-to-right" : "Current direction is left-to-right. Switch to right-to-left");
+      button.textContent = isRtl ? "LTR" : "RTL";
+      button.setAttribute("aria-label", isRtl ? "Switch to left-to-right" : "Switch to right-to-left");
     });
   };
   syncButtons();

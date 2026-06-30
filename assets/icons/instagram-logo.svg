@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34" rx="10" fill="#e1306c"/><circle cx="24" cy="24" r="8" fill="none" stroke="#fff" stroke-width="4"/><circle cx="34" cy="14" r="3" fill="#fff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <radialGradient id="instaGrad" cx="15%" cy="85%" r="100%">
+      <stop offset="0%" stop-color="#fdf497" />
+      <stop offset="5%" stop-color="#fdf497" />
+      <stop offset="45%" stop-color="#fd5949" />
+      <stop offset="60%" stop-color="#d6249f" />
+      <stop offset="90%" stop-color="#285AEB" />
+    </radialGradient>
+  </defs>
+  <rect x="7" y="7" width="34" height="34" rx="9" fill="url(#instaGrad)" />
+  <circle cx="24" cy="24" r="8" fill="none" stroke="#fff" stroke-width="3" />
+  <circle cx="34" cy="14" r="2.2" fill="#fff" />
+</svg>

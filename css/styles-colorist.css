@@ -1,0 +1,317 @@
+/* ==========================================================================
+   COLORIST WORKSPACE & COLOR WHEEL OVERRIDES
+   ========================================================================== */
+
+/* Slider frame highlights */
+.home-polish-highlight #beforeAfterSlider {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 15px 45px rgba(0, 0, 0, 0.4),
+    0 30px 70px rgba(91, 33, 182, 0.22);
+}
+
+.home2-colorist-section {
+  background: var(--bg);
+}
+
+.colorist-deck-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3.5vw, 42px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: var(--shadow);
+  padding: clamp(24px, 3vw, 36px);
+  margin-top: 36px;
+  align-items: stretch;
+}
+
+/* --- Left: Viewport & Monitor --- */
+.colorist-viewport-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+.colorist-monitor-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #000;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.colorist-monitor-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.colorist-monitor-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%);
+  z-index: 2;
+}
+.colorist-viewport-panel .colorist-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  background: rgba(17, 24, 39, 0.75);
+  color: var(--accent);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(6, 182, 212, 0.4);
+}
+
+/* Waveform Scopes animation */
+.colorist-scopes-wrap {
+  background: var(--surface-2);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 14px 18px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.scope-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--muted);
+  opacity: 0.8;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.colorist-scopes-grid {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 52px;
+  gap: 3px;
+}
+.scope-bar {
+  flex: 1;
+  border-radius: 99px 99px 0 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: height 0.3s ease, background 0.3s ease;
+}
+.bar-red { background: rgba(239, 68, 68, 0.45); }
+.bar-green { background: rgba(34, 197, 94, 0.45); }
+.bar-blue { background: rgba(59, 130, 246, 0.45); }
+
+/* --- Right: Controls --- */
+.colorist-controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+.colorist-viewport-panel h3,
+.colorist-controls-panel h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+}
+.lut-selectors-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 901px) {
+  .lut-selectors-grid {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    gap: 8px;
+  }
+}
+.lut-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: start;
+  width: 100%;
+  transition: all 0.22s ease;
+}
+@media (min-width: 901px) {
+  .lut-btn {
+    flex: 1;
+    min-height: 0;
+    padding: 4px 16px;
+  }
+}
+
+.lut-btn:hover {
+  background: color-mix(in srgb, var(--brand) 8%, var(--surface-2));
+  border-color: color-mix(in srgb, var(--brand) 30%, var(--line));
+}
+.lut-btn.active {
+  background: color-mix(in srgb, var(--brand) 12%, var(--surface-2));
+  border-color: var(--brand-2);
+  color: var(--text);
+  box-shadow: 0 0 16px rgba(217, 70, 239, 0.12);
+}
+
+.lut-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-log { background: #9ca3af; }
+.dot-teal-orange { background: #f97316; }
+.dot-cyberpunk { background: #d946ef; }
+.dot-vintage { background: #eab308; }
+.dot-noir { background: #ffffff; }
+
+.lut-btn b {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.lut-btn span {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+.lut-btn.active span {
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+/* Colorist Color Wheel disc radial-conic-gradient & crosshair indicator overrides */
+.color-wheel-section {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.color-wheel-section h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.wheel-flex-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.interactive-color-wheel {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--line);
+  cursor: crosshair;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  background: #000;
+}
+.wheel-gradient-disc {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle, #ffffff 10%, transparent 80%),
+    conic-gradient(from 0deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+}
+.wheel-crosshair {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 480px) {
+  .wheel-flex-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .wheel-data-readout {
+    width: 100%;
+  }
+}
+
+/* Explicit font settings for Offset Readouts */
+.wheel-data-readout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  align-items: center;
+  text-align: center;
+}
+.readout-item {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.readout-item strong {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* Reset Offset Button Custom Layout (inherits .btn-secondary styles) */
+.reset-wheel-btn {
+  margin-top: 14px;
+  width: 100%;
+  min-width: 140px;
+}
+
+/* Home 2: keep the Edge intro readable in light theme. */
+body:not(.dark) .home2-edge-section {
+  color: #17112f;
+  background:
+    linear-gradient(160deg, rgba(248, 247, 255, 0.96) 0%, rgba(238, 234, 255, 0.9) 58%, rgba(255, 255, 255, 0.96) 100%),
+    url("../assets/images/background_image9_bg.jpg") center / cover no-repeat !important;
+}
+
+body:not(.dark) .home2-edge-section .eyebrow {
+  color: #7c3aed !important;
+  text-shadow: none !important;
+}
+
+body:not(.dark) .home2-edge-section h2 {
+  color: #5b21b6 !important;
+  text-shadow: none !important;
+}
+
+body:not(.dark) .home2-edge-section .section-head p,
+body:not(.dark) .home2-edge-section .lead {
+  color: #3f3a63 !important;
+  text-shadow: none !important;
+}
+
