@@ -215,6 +215,12 @@
   z-index: 0;
 }
 
+body.rtl .hs-process-steps::before,
+html[dir="rtl"] .hs-process-steps::before {
+  left: auto;
+  right: 40px;
+}
+
 .hs-step {
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -625,6 +631,11 @@
   .hs-ba-stats { flex-wrap: wrap; }
   .hs-ba-stat { flex: 1; min-width: 160px; }
   .hs-process-steps::before { left: 28px; }
+  body.rtl .hs-process-steps::before,
+  html[dir="rtl"] .hs-process-steps::before {
+    left: auto;
+    right: 28px;
+  }
   .hs-step { grid-template-columns: 60px 1fr; gap: 18px; }
   .hs-step-num { width: 44px; height: 44px; font-size: 0.8rem; }
 }
